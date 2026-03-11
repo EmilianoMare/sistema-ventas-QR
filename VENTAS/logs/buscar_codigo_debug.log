@@ -1,0 +1,82 @@
+2026-02-13 15:15:46 | buscar_codigo recibido: 'faro'
+2026-02-13 15:15:46 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-13 15:34:55 | buscar_codigo recibido: 'tuerca'
+2026-02-13 15:34:55 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%tuerca%' OR producto_nombre LIKE '%tuerca%' OR producto_marca LIKE '%tuerca%' OR producto_modelo LIKE '%tuerca%') ORDER BY producto_nombre ASC
+2026-02-15 23:57:41 | buscar_codigo recibido: 'faro'
+2026-02-15 23:57:41 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:10:19 | buscar_codigo recibido: 'faro'
+2026-02-16 00:10:19 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:10:38 | buscar_codigo recibido: 'faro'
+2026-02-16 00:10:38 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:10:44 | buscar_codigo recibido: 'faro'
+2026-02-16 00:10:44 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:17:19 | buscar_codigo recibido: 'faro'
+2026-02-16 00:17:19 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:17:30 | buscar_codigo recibido: 'faro'
+2026-02-16 00:17:30 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:23:41 | buscar_codigo recibido: 'faro'
+2026-02-16 00:23:41 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:24:50 | buscar_codigo recibido: 'faro'
+2026-02-16 00:24:50 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:24:54 | buscar_codigo recibido: 'faro'
+2026-02-16 00:24:54 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:24:54 | buscar_codigo recibido: 'faro'
+2026-02-16 00:24:54 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 00:32:35 | buscar_codigo recibido: 'far'
+2026-02-16 00:32:35 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%far%' OR producto_nombre LIKE '%far%' OR producto_marca LIKE '%far%' OR producto_modelo LIKE '%far%') ORDER BY producto_nombre ASC
+2026-02-16 00:32:44 | buscar_codigo recibido: 'far'
+2026-02-16 00:32:44 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%far%' OR producto_nombre LIKE '%far%' OR producto_marca LIKE '%far%' OR producto_modelo LIKE '%far%') ORDER BY producto_nombre ASC
+2026-02-16 00:39:03 | buscar_codigo recibido: 'fa'
+2026-02-16 00:39:03 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%fa%' OR producto_nombre LIKE '%fa%' OR producto_marca LIKE '%fa%' OR producto_modelo LIKE '%fa%') ORDER BY producto_nombre ASC
+2026-02-16 00:57:07 | buscar_codigo recibido: 'faro'
+2026-02-16 00:57:07 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-16 09:49:42 | buscar_codigo recibido: 'fa'
+2026-02-16 09:49:42 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%fa%' OR producto_nombre LIKE '%fa%' OR producto_marca LIKE '%fa%' OR producto_modelo LIKE '%fa%') ORDER BY producto_nombre ASC
+2026-02-16 09:49:57 | buscar_codigo recibido: 'jhon'
+2026-02-16 09:49:57 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%jhon%' OR producto_nombre LIKE '%jhon%' OR producto_marca LIKE '%jhon%' OR producto_modelo LIKE '%jhon%') ORDER BY producto_nombre ASC
+2026-02-16 09:50:02 | buscar_codigo recibido: 'metal'
+2026-02-16 09:50:02 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%metal%' OR producto_nombre LIKE '%metal%' OR producto_marca LIKE '%metal%' OR producto_modelo LIKE '%metal%') ORDER BY producto_nombre ASC
+2026-02-18 21:49:01 | buscar_codigo recibido: 'faro'
+2026-02-18 21:49:01 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%faro%' OR producto_nombre LIKE '%faro%' OR producto_marca LIKE '%faro%' OR producto_modelo LIKE '%faro%') ORDER BY producto_nombre ASC
+2026-02-24 13:37:26 | buscar_codigo recibido: 'Va'
+2026-02-24 13:37:26 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%Va%' OR producto_nombre LIKE '%Va%' OR producto_marca LIKE '%Va%' OR producto_modelo LIKE '%Va%') ORDER BY producto_nombre ASC
+2026-02-24 15:00:58 | buscar_codigo recibido: 'val'
+2026-02-24 15:00:58 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%val%' OR producto_nombre LIKE '%val%' OR producto_marca LIKE '%val%' OR producto_modelo LIKE '%val%') ORDER BY producto_nombre ASC
+2026-02-24 15:09:56 | buscar_codigo recibido: 'l'
+2026-02-24 15:09:56 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%l%' OR producto_nombre LIKE '%l%' OR producto_marca LIKE '%l%' OR producto_modelo LIKE '%l%') ORDER BY producto_nombre ASC
+2026-02-24 16:59:09 | buscar_codigo recibido: 'l'
+2026-02-24 16:59:09 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%l%' OR producto_nombre LIKE '%l%' OR producto_marca LIKE '%l%' OR producto_modelo LIKE '%l%') ORDER BY producto_nombre ASC
+2026-02-27 14:15:18 | buscar_codigo recibido: 'sila'
+2026-02-27 14:15:18 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%sila%' OR producto_nombre LIKE '%sila%' OR producto_marca LIKE '%sila%' OR producto_modelo LIKE '%sila%') ORDER BY producto_nombre ASC
+2026-02-27 14:18:04 | buscar_codigo recibido: 'val'
+2026-02-27 14:18:04 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%val%' OR producto_nombre LIKE '%val%' OR producto_marca LIKE '%val%' OR producto_modelo LIKE '%val%') ORDER BY producto_nombre ASC
+2026-03-05 17:06:45 | buscar_codigo recibido: 'linea'
+2026-03-05 17:06:45 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%linea%' OR producto_nombre LIKE '%linea%' OR producto_marca LIKE '%linea%' OR producto_modelo LIKE '%linea%') ORDER BY producto_nombre ASC
+2026-03-05 23:01:26 | buscar_codigo recibido: 'goma'
+2026-03-05 23:01:26 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%goma%' OR producto_nombre LIKE '%goma%' OR producto_marca LIKE '%goma%' OR producto_modelo LIKE '%goma%') ORDER BY producto_nombre ASC
+2026-03-05 23:01:34 | buscar_codigo recibido: 'linea'
+2026-03-05 23:01:34 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%linea%' OR producto_nombre LIKE '%linea%' OR producto_marca LIKE '%linea%' OR producto_modelo LIKE '%linea%') ORDER BY producto_nombre ASC
+2026-03-05 23:08:13 | buscar_codigo recibido: 'mesa'
+2026-03-05 23:08:13 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-05 23:30:26 | buscar_codigo recibido: 'mesa'
+2026-03-05 23:30:26 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-05 23:30:28 | buscar_codigo recibido: 'mesa'
+2026-03-05 23:30:28 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-05 23:44:21 | buscar_codigo recibido: 'lin'
+2026-03-05 23:44:21 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%lin%' OR producto_nombre LIKE '%lin%' OR producto_marca LIKE '%lin%' OR producto_modelo LIKE '%lin%') ORDER BY producto_nombre ASC
+2026-03-06 11:32:15 | buscar_codigo recibido: 'silla'
+2026-03-06 11:32:15 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%silla%' OR producto_nombre LIKE '%silla%' OR producto_marca LIKE '%silla%' OR producto_modelo LIKE '%silla%') ORDER BY producto_nombre ASC
+2026-03-06 11:38:26 | buscar_codigo recibido: 'sil'
+2026-03-06 11:38:26 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%sil%' OR producto_nombre LIKE '%sil%' OR producto_marca LIKE '%sil%' OR producto_modelo LIKE '%sil%') ORDER BY producto_nombre ASC
+2026-03-07 14:05:09 | buscar_codigo recibido: 'mesa'
+2026-03-07 14:05:09 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-07 14:16:43 | buscar_codigo recibido: 'mesa'
+2026-03-07 14:16:43 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-07 14:16:47 | buscar_codigo recibido: 'mesa'
+2026-03-07 14:16:47 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC
+2026-03-07 14:17:00 | buscar_codigo recibido: 'silla'
+2026-03-07 14:17:00 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%silla%' OR producto_nombre LIKE '%silla%' OR producto_marca LIKE '%silla%' OR producto_modelo LIKE '%silla%') ORDER BY producto_nombre ASC
+2026-03-07 14:17:02 | buscar_codigo recibido: 'silla'
+2026-03-07 14:17:02 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%silla%' OR producto_nombre LIKE '%silla%' OR producto_marca LIKE '%silla%' OR producto_modelo LIKE '%silla%') ORDER BY producto_nombre ASC
+2026-03-07 14:17:07 | buscar_codigo recibido: 'mesa'
+2026-03-07 14:17:07 | consulta ejecutada: SELECT * FROM producto WHERE (producto_codigo LIKE '%mesa%' OR producto_nombre LIKE '%mesa%' OR producto_marca LIKE '%mesa%' OR producto_modelo LIKE '%mesa%') ORDER BY producto_nombre ASC

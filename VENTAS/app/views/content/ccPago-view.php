@@ -1,0 +1,245 @@
+<?php
+use app\controllers\clientController;
+
+$pagina = explode("/", $_GET['views'] ?? '');
+$cliente_id = $pagina[1] ?? 0;
+
+// Obtener clientes con deuda
+$insCliente = new clientController();
+$clientesLista = $insCliente->listarClientesCuentaCorriente();
+
+// Obtener datos de clientes para JavaScript
+$clientesData = [];
+$clientesLista2 = $insCliente->listarClientesCuentaCorriente();
+while($row = $clientesLista2->fetch()){
+    $clientesData[$row['cliente_id']] = $row['saldo'];
+}
+?>
+
+<div class="container is-fluid mb-6">
+    <h1 class="title">Registrar Pago</h1>
+    <p class="subtitle">Complete el formulario para registrar un pago de cuenta corriente</p>
+</div>
+
+<div class="container pb-6 pt-6">
+    <div class="columns">
+        <div class="column is-two-thirds">
+            <form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/cuentaCorrienteAjax.php" method="POST" data-form="save" autocomplete="off">
+
+                <input type="hidden" name="modulo_cc" value="registrar_pago">
+
+                <!-- Cliente -->
+                <div class="field">
+                    <label class="label" for="cliente_id">Cliente <?php echo CAMPO_OBLIGATORIO; ?></label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="cliente_id" id="cliente_id" required>
+                                <option value="">-- Seleccionar cliente --</option>
+                                <?php
+                                    $clientesLista->execute();
+                                    while($row = $clientesLista->fetch()){
+                                        if($row['saldo'] > 0){
+                                            $selected = ($cliente_id == $row['cliente_id']) ? 'selected' : '';
+                                            echo '<option value="'.$row['cliente_id'].'" '.$selected.'>'.$row['cliente_nombre'].' '.$row['cliente_apellido'].' - ARS: '.MONEDA_SIMBOLO.number_format($row['saldo'],2).'</option>';
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información de deuda -->
+                <div class="field">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="box has-background-info-light">
+                                <p><strong>Deuda Pendiente:</strong></p>
+                                <p class="has-text-danger" id="deuda_pendiente" style="font-size: 0.95rem; line-height: 1.6;">
+                                    <strong>ARS:</strong> $0.00
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="box has-background-success-light">
+                                <p><strong>Saldo Después del Pago:</strong></p>
+                                <p class="has-text-success" id="saldo_posterior" style="font-size: 0.95rem; line-height: 1.6;">
+                                    <strong>ARS:</strong> $0.00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monto a pagar -->
+                <div class="field">
+                    <label class="label" for="monto">Monto a Pagar <?php echo CAMPO_OBLIGATORIO; ?></label>
+                    <div class="control">
+                        <input class="input" type="number" id="monto" name="monto" step="0.01" min="0.01" placeholder="0.00" required>
+                    </div>
+                    <p class="help is-danger" id="error_monto" style="display:none;">El monto no puede exceder la deuda pendiente</p>
+                </div>
+
+                <!-- Fecha del pago -->
+                <div class="field">
+                    <label class="label" for="fecha_pago">Fecha del Pago <?php echo CAMPO_OBLIGATORIO; ?></label>
+                    <div class="control">
+                        <input class="input" type="date" name="fecha_pago" id="fecha_pago" value="<?php echo date('Y-m-d'); ?>" required>
+                    </div>
+                </div>
+
+                <!-- Método de pago -->
+                <div class="field">
+                    <label class="label" for="metodo_pago">Método de Pago <?php echo CAMPO_OBLIGATORIO; ?></label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select id="metodo_pago" name="metodo_pago" required>
+                                <option value="">-- Seleccionar método --</option>
+                                <option value="EFECTIVO">💵 Efectivo</option>
+                                <option value="CHEQUE">📋 Cheque</option>
+                                <option value="TRANSFERENCIA">💳 Transferencia Bancaria</option>
+                                <option value="TARJETA_CREDITO">💳 Tarjeta de Crédito</option>
+                                <option value="TARJETA_DEBITO">💳 Tarjeta de Débito</option>
+                                <option value="OTRO">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Número de operación (para cheques/transferencias) -->
+                <div class="field" id="campo_numero_operacion" style="display:none;">
+                    <label class="label" for="numero_operacion">Número de Cheque / Referencia</label>
+                    <div class="control">
+                        <input class="input" type="text" name="numero_operacion" id="numero_operacion" placeholder="Ej: 001234">
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="field">
+                    <label class="label" for="detalle">Observaciones / Detalle</label>
+                    <div class="control">
+                        <textarea class="textarea" name="detalle" id="detalle" placeholder="Agregar detalles del pago (opcional)" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Comprobante -->
+                <div class="field">
+                    <label class="checkbox">
+                        <input type="checkbox" name="generar_comprobante" id="generar_comprobante" checked>
+                        Generar comprobante de pago
+                    </label>
+                </div>
+
+                <!-- Botones -->
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button type="submit" class="button is-success is-rounded is-medium">
+                            <span class="icon"><i class="fas fa-check-circle"></i></span>
+                            <span>Registrar Pago</span>
+                        </button>
+                    </div>
+                    <div class="control">
+                        <a href="<?php echo APP_URL; ?>cuentaCorriente/" class="button is-warning is-rounded is-medium">
+                            <span class="icon"><i class="fas fa-arrow-left"></i></span>
+                            <span>Atrás</span>
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Panel de informacion -->
+        <div class="column is-one-third">
+            <div class="box">
+                <h3 class="title is-5"><i class="fas fa-info-circle"></i> Información</h3>
+                
+                <div class="content">
+                    <h4>Pasos para registrar un pago:</h4>
+                    <ol>
+                        <li>Selecciona el cliente deudor</li>
+                        <li>Revisa la deuda pendiente</li>
+                        <li>Ingresa el monto del pago</li>
+                        <li>Selecciona la fecha y método de pago</li>
+                        <li>Agrega observaciones si es necesario</li>
+                        <li>Haz clic en "Registrar Pago"</li>
+                    </ol>
+                </div>
+
+                <div class="notification is-info is-light">
+                    <strong>Nota:</strong> Los pagos se registrarán inmediatamente y se actualizará la deuda del cliente.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const clienteSelect = document.getElementById('cliente_id');
+    const montoInput = document.getElementById('monto');
+    const deudaSpan = document.getElementById('deuda_pendiente');
+    const saldoSpan = document.getElementById('saldo_posterior');
+    const metodoSelect = document.querySelector('select[name="metodo_pago"]');
+    const campoNumero = document.getElementById('campo_numero_operacion');
+    const numeroOperacion = document.getElementById('numero_operacion');
+    const errorMonto = document.getElementById('error_monto');
+
+    // Datos de clientes (desde PHP)
+    const clientesData = {
+        <?php
+            echo implode(',', array_map(function($id, $saldo) { 
+                return $id . ': ' . $saldo; 
+            }, array_keys($clientesData), array_values($clientesData)));
+        ?>
+    };
+
+    // Función para actualizar deuda (datos en ARS)
+    function actualizarDeuda(){
+        const deuda = parseFloat(clientesData[clienteSelect.value] || 0);
+        deudaSpan.innerHTML = '<strong>ARS:</strong> $' + deuda.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        montoInput.max = deuda;
+        montoInput.value = '';
+        saldoSpan.innerHTML = '<strong>ARS:</strong> $0.00';
+        errorMonto.style.display = 'none';
+    }
+
+    // Actualizar deuda cuando cambia el cliente
+    clienteSelect.addEventListener('change', actualizarDeuda);
+
+    // Inicializar deuda si ya hay cliente seleccionado (ej: desde URL)
+    if(clienteSelect.value){
+        actualizarDeuda();
+    }
+
+    // Actualizar saldo posterior cuando cambia el monto
+    montoInput.addEventListener('change', function(){
+        const deuda = parseFloat(clientesData[clienteSelect.value] || 0);
+        const monto = parseFloat(this.value || 0);
+        
+        if(monto > deuda){
+            errorMonto.style.display = 'block';
+            montoInput.classList.add('is-danger');
+            this.value = deuda;
+        } else {
+            errorMonto.style.display = 'none';
+            montoInput.classList.remove('is-danger');
+        }
+        
+        const saldoNuevo = deuda - monto;
+        saldoSpan.innerHTML = '<strong>ARS:</strong> $' + saldoNuevo.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    });
+
+    // Mostrar/ocultar campo de número de operación según método
+    metodoSelect.addEventListener('change', function(){
+        if(this.value === 'CHEQUE' || this.value === 'TRANSFERENCIA'){
+            campoNumero.style.display = 'block';
+            numeroOperacion.required = true;
+        } else {
+            campoNumero.style.display = 'none';
+            numeroOperacion.required = false;
+            numeroOperacion.value = '';
+        }
+    });
+});
+</script>

@@ -1,0 +1,874 @@
+2026-02-24 14:58:46 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 15:00:57 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"v","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (110310)","value":"110310","precio":"420.20","stock":97}]
+
+2026-02-24 15:00:57 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"va","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (110310)","value":"110310","precio":"420.20","stock":97}]
+
+2026-02-24 15:00:57 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"val","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (110310)","value":"110310","precio":"420.20","stock":97}]
+
+2026-02-24 15:00:58 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"val","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('110310')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-24 15:01:00 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-02-24 15:01:17 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"840.40"}
+RESPONSE:
+<br />
+<b>Fatal error</b>:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'punto_venta' in 'field list' in C:\xampp\htdocs\VENTAS\app\models\mainModel.php:132
+Stack trace:
+#0 C:\xampp\htdocs\VENTAS\app\models\mainModel.php(132): PDOStatement-&gt;execute()
+#1 C:\xampp\htdocs\VENTAS\app\controllers\saleController.php(777): app\models\mainModel-&gt;guardarDatos('venta', Array)
+#2 C:\xampp\htdocs\VENTAS\app\ajax\ventaAjax.php(68): app\controllers\saleController-&gt;registrarVentaControlador()
+#3 {main}
+  thrown in <b>C:\xampp\htdocs\VENTAS\app\models\mainModel.php</b> on line <b>132</b><br />
+
+
+2026-02-24 15:05:06 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 15:05:13 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"420.20"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-02-24 15:09:56 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"l","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (110310)","value":"110310","precio":"420.20","stock":94}]
+
+2026-02-24 15:09:56 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"l","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('110310')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-24 15:09:58 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-02-24 16:48:43 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-02-24 16:48:43 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 16:57:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-02-24 16:57:36 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 16:59:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"l","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('110310')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-24 16:59:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"l","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (110310)","value":"110310","precio":"420.20","stock":94}]
+
+2026-02-24 16:59:11 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-02-24 16:59:13 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-02-24 16:59:14 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 17:09:59 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-02-24 17:10:00 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"110310","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"110310","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-02-24 17:14:03 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-24 17:14:05 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-02-24 17:14:11 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CUENTA_CORRIENTE","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-02-27 14:15:18 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"sila","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<article class="message is-warning mt-4 mb-4">
+                 <div class="message-header">
+                    <p>¡Ocurrio un error inesperado!</p>
+                 </div>
+                <div class="message-body has-text-centered">
+                    <i class="fas fa-exclamation-triangle fa-2x"></i><br>
+                    No hemos encontrado ningún producto en el sistema que coincida con <strong>“sila”</strong>
+                </div>
+            </article>
+
+2026-02-27 14:15:18 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"sila","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-02-27 14:18:03 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"v","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":93}]
+
+2026-02-27 14:18:04 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"val","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":93}]
+
+2026-02-27 14:18:04 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"val","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('11031')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-27 14:18:05 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-02-27 14:18:10 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-02-27 14:18:12 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-03-05 16:05:51 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"simple","titulo":"Ocurri\u00f3 un error inesperado","texto":"Esta es una venta al contado, el total a pagar por el cliente no puede ser menor al total a pagar","icono":"error"}
+
+2026-03-05 16:34:29 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","modulo_venta":"remover_producto"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Producto removido!","texto":"El producto se ha removido de la venta","icono":"success"}
+
+2026-03-05 17:05:05 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"420.20"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-03-05 17:06:44 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"l","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":84}]
+
+2026-03-05 17:06:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"line","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":84}]
+
+2026-03-05 17:06:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"linea","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('11031')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 17:06:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"linea","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":84}]
+
+2026-03-05 17:06:46 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-05 17:06:48 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-03-05 17:06:48 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1260.6,"venta_detalle_total_formatted":"$1,260.60 USD","venta_total":"1260.60","venta_total_formatted":"$1,260.60 USD"}
+
+2026-03-05 17:06:53 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 17:06:55 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-03-05 17:07:01 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CUENTA_CORRIENTE","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-03-05 23:01:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"gom","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:01:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"goma","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<article class="message is-warning mt-4 mb-4">
+                 <div class="message-header">
+                    <p>¡Ocurrio un error inesperado!</p>
+                 </div>
+                <div class="message-body has-text-centered">
+                    <i class="fas fa-exclamation-triangle fa-2x"></i><br>
+                    No hemos encontrado ningún producto en el sistema que coincida con <strong>“goma”</strong>
+                </div>
+            </article>
+
+2026-03-05 23:01:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"goma","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:01:32 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"gom","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:01:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"l","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":81}]
+
+2026-03-05 23:01:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"li","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":81}]
+
+2026-03-05 23:01:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"line","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":81}]
+
+2026-03-05 23:01:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"linea","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('11031')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 23:01:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"linea","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":81}]
+
+2026-03-05 23:01:37 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-05 23:01:40 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-03-05 23:01:41 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-03-05 23:01:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-03-05 23:01:48 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1260.6,"venta_detalle_total_formatted":"$1,260.60 USD","venta_total":"1260.60","venta_total_formatted":"$1,260.60 USD"}
+
+2026-03-05 23:01:49 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1680.8,"venta_detalle_total_formatted":"$1,680.80 USD","venta_total":"1680.80","venta_total_formatted":"$1,680.80 USD"}
+
+2026-03-05 23:01:49 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2101,"venta_detalle_total_formatted":"$2,101.00 USD","venta_total":"2101.00","venta_total_formatted":"$2,101.00 USD"}
+
+2026-03-05 23:01:50 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2521.2,"venta_detalle_total_formatted":"$2,521.20 USD","venta_total":"2521.20","venta_total_formatted":"$2,521.20 USD"}
+
+2026-03-05 23:01:51 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2101,"venta_detalle_total_formatted":"$2,101.00 USD","venta_total":"2101.00","venta_total_formatted":"$2,101.00 USD"}
+
+2026-03-05 23:01:51 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1680.8,"venta_detalle_total_formatted":"$1,680.80 USD","venta_total":"1680.80","venta_total_formatted":"$1,680.80 USD"}
+
+2026-03-05 23:01:52 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1260.6,"venta_detalle_total_formatted":"$1,260.60 USD","venta_total":"1260.60","venta_total_formatted":"$1,260.60 USD"}
+
+2026-03-05 23:01:52 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"840.40","venta_total_formatted":"$840.40 USD"}
+
+2026-03-05 23:01:53 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":420.2,"venta_detalle_total_formatted":"$420.20 USD","venta_total":"420.20","venta_total_formatted":"$420.20 USD"}
+
+2026-03-05 23:08:12 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"m","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":30},{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":81}]
+
+2026-03-05 23:08:13 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Mesa</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('234')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 23:08:13 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mesa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":30}]
+
+2026-03-05 23:08:14 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-05 23:29:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1480.20","venta_total_formatted":"$1,480.20 USD"}
+
+2026-03-05 23:29:24 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":530,"venta_detalle_total_formatted":"$530.00 USD","venta_total":"950.20","venta_total_formatted":"$950.20 USD"}
+
+2026-03-05 23:29:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"simple","titulo":"Ocurri\u00f3 un error inesperado","texto":"Esta es una venta al contado, el total a pagar por el cliente no puede ser menor al total a pagar","icono":"error"}
+
+2026-03-05 23:29:52 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"simple","titulo":"Ocurri\u00f3 un error inesperado","texto":"Esta es una venta al contado, el total a pagar por el cliente no puede ser menor al total a pagar","icono":"error"}
+
+2026-03-05 23:30:08 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CONTADO","venta_abono":"950.20"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-03-05 23:30:25 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"m","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29},{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-05 23:30:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mesa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29}]
+
+2026-03-05 23:30:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Mesa</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('234')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 23:30:28 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Mesa</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('234')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 23:30:29 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-05 23:30:36 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1060.00","venta_total_formatted":"$1,060.00 USD"}
+
+2026-03-05 23:33:16 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1590,"venta_detalle_total_formatted":"$1,590.00 USD","venta_total":"1590.00","venta_total_formatted":"$1,590.00 USD"}
+
+2026-03-05 23:33:17 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2120,"venta_detalle_total_formatted":"$2,120.00 USD","venta_total":"2120.00","venta_total_formatted":"$2,120.00 USD"}
+
+2026-03-05 23:33:18 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2650,"venta_detalle_total_formatted":"$2,650.00 USD","venta_total":"2650.00","venta_total_formatted":"$2,650.00 USD"}
+
+2026-03-05 23:33:19 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3180,"venta_detalle_total_formatted":"$3,180.00 USD","venta_total":"3180.00","venta_total_formatted":"$3,180.00 USD"}
+
+2026-03-05 23:33:19 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"7","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3710,"venta_detalle_total_formatted":"$3,710.00 USD","venta_total":"3710.00","venta_total_formatted":"$3,710.00 USD"}
+
+2026-03-05 23:33:20 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"8","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":4240,"venta_detalle_total_formatted":"$4,240.00 USD","venta_total":"4240.00","venta_total_formatted":"$4,240.00 USD"}
+
+2026-03-05 23:33:22 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"9","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":4770,"venta_detalle_total_formatted":"$4,770.00 USD","venta_total":"4770.00","venta_total_formatted":"$4,770.00 USD"}
+
+2026-03-05 23:33:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"8","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":4240,"venta_detalle_total_formatted":"$4,240.00 USD","venta_total":"4240.00","venta_total_formatted":"$4,240.00 USD"}
+
+2026-03-05 23:33:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"7","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3710,"venta_detalle_total_formatted":"$3,710.00 USD","venta_total":"3710.00","venta_total_formatted":"$3,710.00 USD"}
+
+2026-03-05 23:33:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3180,"venta_detalle_total_formatted":"$3,180.00 USD","venta_total":"3180.00","venta_total_formatted":"$3,180.00 USD"}
+
+2026-03-05 23:33:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2650,"venta_detalle_total_formatted":"$2,650.00 USD","venta_total":"2650.00","venta_total_formatted":"$2,650.00 USD"}
+
+2026-03-05 23:33:24 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2120,"venta_detalle_total_formatted":"$2,120.00 USD","venta_total":"2120.00","venta_total_formatted":"$2,120.00 USD"}
+
+2026-03-05 23:33:24 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1590,"venta_detalle_total_formatted":"$1,590.00 USD","venta_total":"1590.00","venta_total_formatted":"$1,590.00 USD"}
+
+2026-03-05 23:33:24 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1060.00","venta_total_formatted":"$1,060.00 USD"}
+
+2026-03-05 23:33:25 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":530,"venta_detalle_total_formatted":"$530.00 USD","venta_total":"530.00","venta_total_formatted":"$530.00 USD"}
+
+2026-03-05 23:33:37 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1060.00","venta_total_formatted":"$1,060.00 USD"}
+
+2026-03-05 23:33:42 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1590,"venta_detalle_total_formatted":"$1,590.00 USD","venta_total":"1590.00","venta_total_formatted":"$1,590.00 USD"}
+
+2026-03-05 23:33:48 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2120,"venta_detalle_total_formatted":"$2,120.00 USD","venta_total":"2120.00","venta_total_formatted":"$2,120.00 USD"}
+
+2026-03-05 23:38:59 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1590,"venta_detalle_total_formatted":"$1,590.00 USD","venta_total":"1590.00","venta_total_formatted":"$1,590.00 USD"}
+
+2026-03-05 23:38:59 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1060.00","venta_total_formatted":"$1,060.00 USD"}
+
+2026-03-05 23:39:00 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"1","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":530,"venta_detalle_total_formatted":"$530.00 USD","venta_total":"530.00","venta_total_formatted":"$530.00 USD"}
+
+2026-03-05 23:39:03 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 USD","venta_total":"1060.00","venta_total_formatted":"$1,060.00 USD"}
+
+2026-03-05 23:39:03 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1590,"venta_detalle_total_formatted":"$1,590.00 USD","venta_total":"1590.00","venta_total_formatted":"$1,590.00 USD"}
+
+2026-03-05 23:39:03 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2120,"venta_detalle_total_formatted":"$2,120.00 USD","venta_total":"2120.00","venta_total_formatted":"$2,120.00 USD"}
+
+2026-03-05 23:39:04 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2650,"venta_detalle_total_formatted":"$2,650.00 USD","venta_total":"2650.00","venta_total_formatted":"$2,650.00 USD"}
+
+2026-03-05 23:44:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3180,"venta_detalle_total_formatted":"$3,180.00 USD","venta_total":"3180.00","venta_total_formatted":"$3,180.00 USD"}
+
+2026-03-05 23:44:10 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"7","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3710,"venta_detalle_total_formatted":"$3,710.00 USD","venta_total":"3710.00","venta_total_formatted":"$3,710.00 USD"}
+
+2026-03-05 23:44:10 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"8","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":4240,"venta_detalle_total_formatted":"$4,240.00 USD","venta_total":"4240.00","venta_total_formatted":"$4,240.00 USD"}
+
+2026-03-05 23:44:12 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"7","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3710,"venta_detalle_total_formatted":"$3,710.00 USD","venta_total":"3710.00","venta_total_formatted":"$3,710.00 USD"}
+
+2026-03-05 23:44:12 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":3180,"venta_detalle_total_formatted":"$3,180.00 USD","venta_total":"3180.00","venta_total_formatted":"$3,180.00 USD"}
+
+2026-03-05 23:44:12 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":2650,"venta_detalle_total_formatted":"$2,650.00 USD","venta_total":"2650.00","venta_total_formatted":"$2,650.00 USD"}
+
+2026-03-05 23:44:17 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"m","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29},{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-05 23:44:19 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"fi","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:44:19 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"fij","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:44:19 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"fijo","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-05 23:44:21 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"li","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-05 23:44:21 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"lin","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-05 23:44:22 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"lin","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Valvula de corte general electrica GEOLINE linea 463</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('11031')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-05 23:44:24 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-05 23:44:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":840.4,"venta_detalle_total_formatted":"$840.40 USD","venta_total":"3490.40","venta_total_formatted":"$3,490.40 USD"}
+
+2026-03-05 23:44:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1260.6,"venta_detalle_total_formatted":"$1,260.60 USD","venta_total":"3910.60","venta_total_formatted":"$3,910.60 USD"}
+
+2026-03-05 23:44:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"4","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":1680.8,"venta_detalle_total_formatted":"$1,680.80 USD","venta_total":"4330.80","venta_total_formatted":"$4,330.80 USD"}
+
+2026-03-05 23:44:33 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"5","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2101,"venta_detalle_total_formatted":"$2,101.00 USD","venta_total":"4751.00","venta_total_formatted":"$4,751.00 USD"}
+
+2026-03-05 23:44:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"6","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2521.2,"venta_detalle_total_formatted":"$2,521.20 USD","venta_total":"5171.20","venta_total_formatted":"$5,171.20 USD"}
+
+2026-03-05 23:44:34 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"7","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":2941.4,"venta_detalle_total_formatted":"$2,941.40 USD","venta_total":"5591.40","venta_total_formatted":"$5,591.40 USD"}
+
+2026-03-05 23:44:35 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"11031","producto_cantidad":"8","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"11031","venta_detalle_total":3361.6,"venta_detalle_total_formatted":"$3,361.60 USD","venta_total":"6011.60","venta_total_formatted":"$6,011.60 USD"}
+
+2026-03-06 11:32:15 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"silla","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Silla (678)","value":"678","precio":"800.00","stock":50}]
+
+2026-03-06 11:32:15 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"silla","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Silla</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('678')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-06 11:32:18 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"678","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-06 11:32:22 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"678","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"678","venta_detalle_total":1600,"venta_detalle_total_formatted":"$1,600.00 USD","venta_total":"1600.00","venta_total_formatted":"$1,600.00 USD"}
+
+2026-03-06 11:32:23 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"678","producto_cantidad":"3","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"678","venta_detalle_total":2400,"venta_detalle_total_formatted":"$2,400.00 USD","venta_total":"2400.00","venta_total_formatted":"$2,400.00 USD"}
+
+2026-03-06 11:32:41 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-06 11:32:45 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-03-06 11:33:21 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CUENTA_CORRIENTE","venta_abono":"400"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-03-06 11:38:25 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"sil","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Silla (678)","value":"678","precio":"800.00","stock":47}]
+
+2026-03-06 11:38:25 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"sila","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[]
+
+2026-03-06 11:38:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"sil","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Silla (678)","value":"678","precio":"800.00","stock":47}]
+
+2026-03-06 11:38:26 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"sil","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Silla</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('678')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-06 11:38:27 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"678","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-06 11:38:49 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-06 11:38:53 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-06 11:38:56 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2006] MySQL server has gone away</p></div>
+
+2026-03-06 11:39:00 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-06 11:39:04 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-06 11:39:28 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-06 11:39:30 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-03-07 14:05:08 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"m","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29},{"label":"Silla (678)","value":"678","precio":"800.00","stock":47},{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-07 14:05:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"me","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29},{"label":"Valvula de corte general electrica GEOLINE linea 463 (11031)","value":"11031","precio":"420.20","stock":80}]
+
+2026-03-07 14:05:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mes","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29}]
+
+2026-03-07 14:05:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Mesa</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('234')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-07 14:05:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mesa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":29}]
+
+2026-03-07 14:05:10 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+
+2026-03-07 14:05:13 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","producto_cantidad":"2","modulo_venta":"actualizar_producto","inline_update":"1"}
+RESPONSE:
+{"tipo":"inline","producto_codigo":"234","venta_detalle_total":1060,"venta_detalle_total_formatted":"$1,060.00 ARS","venta_total":"1060.00","venta_total_formatted":"$1,060.00 ARS"}
+
+2026-03-07 14:05:20 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_cliente":"davi","modulo_venta":"buscar_cliente"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr>
+                    <td class="has-text-left" ><i class="fas fa-male fa-fw"></i> &nbsp; David Fonseca (DNI: 43201288)</td>
+                    <td class="has-text-centered" >
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_cliente(2)"><i class="fas fa-user-plus"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-07 14:05:22 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"cliente_id":"2","modulo_venta":"agregar_cliente"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Cliente agregado!","texto":"El cliente se agreg\u00f3 para realizar una venta","icono":"success"}
+
+2026-03-07 14:05:32 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"modulo_venta":"registrar_venta","venta_caja":"1","forma_pago":"CUENTA_CORRIENTE","venta_abono":"0.00"}
+RESPONSE:
+{"tipo":"recargar","titulo":"\u00a1Venta registrada!","texto":"La venta se registr\u00f3 con \u00e9xito en el sistema","icono":"success"}
+
+2026-03-07 14:16:35 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"me","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:16:39 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mes","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:16:43 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mesa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:16:47 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:16:52 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:16:56 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"esa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:17:00 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"si","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+<div style="padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;"><h2 style="margin:0 0 .5rem;color:#c00;">Error de conexión a la base de datos</h2><p>Comprueba que el servicio MySQL esté corriendo y que las credenciales en <strong>config/server.php</strong> sean correctas.</p><p style="font-size:.9rem;color:#666;">Detalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi&oacute;n ya que el equipo de destino deneg&oacute; expresamente dicha conexi&oacute;n</p></div>
+
+2026-03-07 14:17:02 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"silla","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Silla</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('678')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-07 14:17:02 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"silla","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Silla (678)","value":"678","precio":"800.00","stock":47}]
+
+2026-03-07 14:17:02 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"silla","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Silla</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('678')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-07 14:17:02 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"sill","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Silla (678)","value":"678","precio":"800.00","stock":47}]
+
+2026-03-07 14:17:07 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"buscar_codigo":"mesa","modulo_venta":"buscar_codigo"}
+RESPONSE:
+<div class="table-container mb-6"><table class="table is-striped is-narrow is-hoverable is-fullwidth"><tbody>
+                <tr class="has-text-left" >
+                    <td><i class="fas fa-box fa-fw"></i> &nbsp; Mesa</td>
+                    <td class="has-text-centered">
+                        <button type="button" class="button is-link is-rounded is-small" onclick="agregar_codigo('234')"><i class="fas fa-plus-circle"></i></button>
+                    </td>
+                </tr>
+                </tbody></table></div>
+
+2026-03-07 14:17:07 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"term":"mesa","modulo_venta":"autocomplete_producto"}
+RESPONSE:
+[{"label":"Mesa (234)","value":"234","precio":"530.00","stock":27}]
+
+2026-03-07 14:17:09 | AJAX venta request: POST /VENTAS/app/ajax/ventaAjax.php | POST: {"producto_codigo":"234","modulo_venta":"agregar_producto"}
+RESPONSE:
+{"tipo":"redireccionar","url":"http:\/\/localhost\/VENTAS\/saleNew\/"}
+

@@ -1,0 +1,308 @@
+2026-02-17 10:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 00:06:07 - SUCCESS - "\u003cdiv style=\"padding:1rem;background:#fff;border:1px solid #e5e5e5;margin:1rem;font-family:Arial,Helvetica,sans-serif;\"\u003e\u003ch2 style=\"margin:0 0 .5rem;color:#c00;\"\u003eError de conexión a la base de datos\u003c/h2\u003e\u003cp\u003eComprueba que el servicio MySQL esté corriendo y que las credenciales en \u003cstrong\u003econfig/server.php\u003c/strong\u003e sean correctas.\u003c/p\u003e\u003cp style=\"font-size:.9rem;color:#666;\"\u003eDetalle técnico: SQLSTATE[HY000] [2002] No se puede establecer una conexi\u0026oacute;n ya que el equipo de destino deneg\u0026oacute; expresamente dicha conexi\u0026oacute;n\u003c/p\u003e\u003c/div\u003e"
+2026-02-18 14:06:04 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 14:36:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 15:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 15:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 16:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 16:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 22:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 22:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 23:06:07 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-18 23:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 00:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 00:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 01:06:07 - SUCCESS - {"status":"error","mensaje":"No se pudo obtener el cambio desde API"}
+2026-02-19 01:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 02:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 02:36:04 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 03:06:04 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 09:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-19 10:06:05 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 10:36:04 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 11:06:02 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 11:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 12:06:02 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 12:36:02 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 13:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 13:36:02 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 14:06:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 14:36:03 - SUCCESS - {"status":"success","cambio":1420,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 15:06:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 15:36:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 16:06:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 16:36:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 17:06:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 17:36:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-19 18:06:03 - SUCCESS - {"status":"success","cambio":1410,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-22 22:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-22 22:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-22 23:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-22 23:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 00:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 00:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 01:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 01:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 02:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 02:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 03:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 03:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 04:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 04:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 05:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 05:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 06:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 06:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 07:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 07:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 08:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 08:36:05 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 09:06:05 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 09:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 10:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-23 11:06:03 - SUCCESS - {"status":"success","cambio":1395,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-23 11:36:02 - SUCCESS - {"status":"success","cambio":1390,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 13:36:03 - SUCCESS - {"status":"success","cambio":1395,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 14:06:03 - SUCCESS - {"status":"success","cambio":1395,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 14:36:03 - SUCCESS - {"status":"success","cambio":1395,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 15:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 15:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 16:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 16:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 17:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 17:36:04 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 18:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 18:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 19:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 19:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 20:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 20:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 21:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 21:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 22:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 22:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 23:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-24 23:36:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-25 00:06:03 - SUCCESS - {"status":"success","cambio":1400,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-02-25 00:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 01:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 01:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 02:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 02:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 03:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 03:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 04:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 04:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 05:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 05:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 06:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 06:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 07:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 07:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 08:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 08:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 09:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 09:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 10:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 11:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 11:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 12:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 12:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 13:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 13:36:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 14:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 14:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 15:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 15:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 16:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 16:36:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 17:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 17:36:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 18:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 18:36:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 19:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 20:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 21:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 21:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 22:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 23:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-25 23:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 00:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 00:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 01:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 01:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 03:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 03:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 04:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 04:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 05:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 05:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 06:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 06:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 07:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 07:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 08:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 08:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 09:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 09:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 10:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 11:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 11:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 12:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 13:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 13:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 15:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 16:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-26 16:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-02-27 13:36:07 - ERROR - No es posible conectar con el servidor remoto
+2026-03-05 16:06:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 16:36:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 17:06:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 21:06:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 21:36:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 22:36:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-05 23:06:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-06 00:06:03 - SUCCESS - {"status":"success","cambio":1425,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-06 11:36:04 - SUCCESS - {"status":"success","cambio":1430,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-06 12:06:03 - SUCCESS - {"status":"success","cambio":1435,"mensaje":"Tipo de cambio (Venta) obtenido desde Banco Nación"}
+2026-03-06 13:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 14:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 14:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 15:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 15:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 16:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 16:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 17:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 17:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 18:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 18:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 19:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 19:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 20:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 20:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 21:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 21:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 22:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 22:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 23:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-06 23:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 00:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 00:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 01:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 01:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 02:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 02:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 03:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 03:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 04:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 04:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 05:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 05:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 06:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 06:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 07:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 07:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 08:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 08:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 09:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 14:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 14:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 15:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 15:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 16:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 16:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-07 17:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 02:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 02:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 03:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 03:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 04:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 04:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 05:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 05:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 06:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 06:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 07:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 07:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 08:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 08:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 09:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 10:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 10:36:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 12:06:06 - ERROR - No es posible conectar con el servidor remoto
+2026-03-09 13:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 13:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 14:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 14:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 15:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 15:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 16:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 16:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 17:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 17:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 18:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 18:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 19:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 19:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 20:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 20:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 21:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 21:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 22:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 22:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 23:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-09 23:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 00:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 00:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 01:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 01:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 02:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 02:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 03:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 03:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 04:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 04:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 05:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 05:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 06:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 06:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 07:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 07:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 08:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 08:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 09:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 09:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 10:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 10:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 11:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 11:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 12:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 12:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 13:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 13:36:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 14:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 14:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 15:06:01 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 15:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 16:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 16:36:01 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 17:06:03 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 17:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 18:06:01 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 18:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 19:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 19:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 20:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 20:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 21:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 21:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 22:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 22:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 23:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-10 23:36:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-11 00:06:02 - SUCCESS - {"status":"disabled","mensaje":"Módulo de tipo de cambio deshabilitado. El sistema opera en ARS."}
+2026-03-11 10:36:08 - ERROR - No es posible conectar con el servidor remoto
+2026-03-11 12:06:08 - ERROR - No es posible conectar con el servidor remoto
+2026-03-11 12:36:08 - ERROR - No es posible conectar con el servidor remoto
+2026-03-11 14:06:07 - ERROR - No es posible conectar con el servidor remoto
+2026-03-11 14:36:07 - ERROR - No es posible conectar con el servidor remoto

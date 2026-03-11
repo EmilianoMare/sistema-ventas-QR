@@ -1,0 +1,895 @@
+/*=====================================================
+                    Tipografia
+======================================================*/
+@font-face{
+    font-family: "RobotoCondensedLight";
+    src: url("../webfonts/robotocondensed-light.ttf"), 
+    url("../webfonts/robotocondensed-light.eot"), 
+    url("../webfonts/robotocondensed-light.woff"), 
+    url("../webfonts/robotocondensed-light.woff2"), 
+    url("../webfonts/robotocondensed-light.svg");
+}
+@font-face{
+    font-family: "RobotoRegular";
+    src: url("../webfonts/roboto-regular.ttf"), 
+    url("../webfonts/roboto-regular.eot"), 
+    url("../webfonts/roboto-regular.woff"), 
+    url("../webfonts/roboto-regular.woff2"), 
+    url("../webfonts/roboto-regular.svg");
+}
+@font-face{
+    font-family: "OswaldLight";
+    src: url("../webfonts/oswald-light.ttf"), 
+    url("../webfonts/oswald-light.eot"), 
+    url("../webfonts/oswald-light.woff"), 
+    url("../webfonts/oswald-light.woff2"), 
+    url("../webfonts/oswald-light.svg");
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "RobotoRegular";
+    position: relative;
+    background-color: #fff;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000428;
+    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    background: linear-gradient(to right, #004e92, #000428);
+}
+
+.main-container > .login,
+.main-container > .hero-body{
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.is-photo{
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.text-condensedLight{ font-family: "RobotoCondensedLight"; }
+.tittles{ font-family: "OswaldLight"; }
+.full-width{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.list-unstyle{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+.divider-menu-h{
+    height: 0 !important;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    width: 92% !important;
+    margin: 0 auto !important;
+}
+
+.page-container{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*  Scrolls */
+.scroll::-webkit-scrollbar{
+    width: 8px;
+}
+.scroll::-webkit-scrollbar-thumb{
+    background: rgba(102,107,122,1);
+}
+.scroll::-webkit-scrollbar-thumb:active,
+.scroll::-webkit-scrollbar-thumb:hover{
+    background: rgba(102,107,122,1);
+} 
+.scroll::-webkit-scrollbar-track{
+    background: rgba(29, 30, 34, 1);
+}
+.scroll::-webkit-scrollbar-track:hover, 
+.scroll::-webkit-scrollbar-track:active{
+    background: rgba(29, 30, 34, 1);
+}
+/*=============Estilos barra superior*/
+.navBar{
+    background: linear-gradient(180deg,#0b3d91 0%, #052a61 100%);
+    height: 45px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(3,10,28,0.18);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.navBar-options{
+    line-height: 45px;
+    height: 45px;
+    padding: 0;
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+    color: #e6f0ff;
+}
+.navBar-options a, .navBar-options-list ul li a{ color: #ffffff; }
+.navBar-options .fa-exchange-alt,
+.navBar-options-list{
+    line-height: 45px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+}
+.navBar-options .fa-exchange-alt{
+    width: 40px;
+    left: 0;
+    font-size: 23px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    outline: none;
+    margin-left: 9px;
+}
+.navBar-options-list{
+    right: 9px;
+}
+.navBar-options-list .noLink{
+    cursor: inherit;
+}
+.navBar-options-list ul{
+    height: 45px;
+    display: flex;
+}
+.navBar-options-list ul li{
+    height: 45px;
+    line-height: 45px;
+    cursor: pointer;
+    padding: 0 7px;
+    font-size: 21px;
+    user-select: none;
+}
+.navBar-options-list ul li{ outline: none; }
+.navBar-options-list ul li a,
+.navBar-options-list ul li img{
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    margin-top: 0;
+    box-sizing: border-box;
+    color: #FFF;
+}
+.navBar-options-list ul li img{
+    border: 1px solid #E1E1E1;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+/*=============Estilos en comun navegacion lateral y contenido pagina*/
+.navLateral,
+.pageContent,
+.navLateral-body{
+    height: 100%;
+}
+.navLateral,
+.pageContent{
+    overflow-y: auto;
+}
+/*=============Estilos navegacion lateral*/
+.navLateral{
+    width: 300px;
+    border-right: 1px solid #E1E1E1;
+    transition: all .25s ease-in-out;
+    position: relative;
+    background: linear-gradient(180deg,#0b3d91 0%, #052a61 100%);
+    box-shadow: 2px 0 16px rgba(3,10,28,0.5);
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Compact / icons-only variant */
+.navLateral-compact{
+    width: 86px;
+}
+
+/* When compact, hide labels and center icons */
+.navLateral-compact .navLateral-body-cr,
+.navLateral-compact .navLateral-body-tittle-menu{ display: none !important; }
+.navLateral-compact .navLateral-body-cl{ width:100%; }
+.navLateral-compact .menu-principal li a{ display:flex; justify-content:center; align-items:center; }
+.navLateral-compact .menu-principal li a div.navLateral-body-cl{ font-size:22px; width:100%; }
+.navLateral-compact .menu-principal li a div.navLateral-body-cl i{ margin:0 !important; }
+.navLateral-compact .menu-principal li a .navLateral-body-cr{ display:none; }
+
+/* Tooltip-like label when hovering items in compact mode */
+.navLateral-compact .menu-principal li a:hover::after{
+    content: attr(data-title);
+    position: fixed;
+    left: 96px;
+    top: calc(50% - 16px);
+    background: #ffffff;
+    color: #222;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    white-space: nowrap;
+    z-index: 9999;
+    font-size: 0.95rem;
+}
+
+/* Slightly smaller avatar when compact */
+.navLateral-compact .navLateral-body-cl img{ width:42px; height:42px; margin-top:8px; }
+
+.navLateral-change{
+    pointer-events: none;
+    opacity: 0;
+    width: 0;
+    border-right: none;
+}
+.navLateral-body{
+    background-color: transparent;
+    position: relative;
+}
+.navLateral-body-logo{
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    width: 100%;
+    font-size: 25px;
+    background-color: #06224a;
+}
+.navLateral-body-cl,
+.navLateral-body-cr{
+    box-sizing: border-box;
+    height: 77px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.navLateral-body-cl{
+    width: 30%;
+}
+.navLateral-body-cl img{
+    width: 57px;
+    height: 57px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+.navLateral-body-cr{
+    width: 70%;
+    font-family: "RobotoCondensedLight";
+    color: #ffffff;
+}
+.navLateral-body-tittle-menu{
+    height: 70px;
+    line-height: 70px; 
+    font-size:20px; 
+    background-color: transparent;
+    text-align: center;
+    color: #dbe9ff;
+}
+.menu-principal li,
+.menu-principal li a{
+    display: block;
+}
+.menu-principal li a{
+    height: 45px;
+    color: #ffffff;
+    position: relative;
+    transition: all .2s ease-in-out;
+    padding-left: 8px;
+}
+.menu-principal li a:hover{
+    color: #ffffff;
+    background: rgba(255,255,255,0.04);
+}
+.menu-principal li a div.navLateral-body-cl,
+.menu-principal li a div.navLateral-body-cr{
+    height: 45px;
+    line-height: 45px;
+}
+.menu-principal li a div.navLateral-body-cl{
+    text-align: center;
+    font-size: 20px;
+}
+.btn-subMenu span.fa-chevron-down{
+    position: absolute;
+    top: 0;
+    right: 7px;
+    line-height: 45px;
+    height: 45px;
+    font-size: 19px;
+    transition: all .3s ease-in-out;
+}
+.btn-subMenu + .sub-menu-options{
+    transition: all .3s ease-in-out;
+}
+.sub-menu-options{
+    height: 0;
+    background-color: rgba(255,255,255,0.02);
+    overflow-y: hidden;
+    transition: all .3s ease-in-out;
+}
+.sub-menu-options li a{ border-left: 4px solid transparent; color: #e6eefb; }
+.sub-menu-options li a:hover{ border-left: 4px solid #88b7ff; color: #fff; }
+.btn-subMenu-show{
+    background-color: rgba(255,255,255,0.03);
+}
+.btn-subMenu-show .navLateral-body-cl,
+
+/* Accent for icons inside nav */
+.navLateral .navLateral-body-cl i,
+.navLateral .menu-principal li a div.navLateral-body-cl i{
+    color: #cfe3ff;
+}
+
+/* Responsive: tweak compact mode contrast */
+.navLateral-compact .navLateral-body-logo{ background-color: #06224a !important; }
+.btn-subMenu-show .navLateral-body-cr{
+    color: #ffffff;
+}
+.btn-subMenu-show + .sub-menu-options{
+    height: auto;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-subMenu-show span.fa-chevron-down{
+    transform: rotate(180deg);
+}
+
+/* Ensure active/selected menu items use white text for proper contrast */
+.menu-principal li a.is-active,
+.menu-principal li a.active,
+.menu-principal li a.is-active div.navLateral-body-cr,
+.menu-principal li a.active div.navLateral-body-cr,
+.sub-menu-options li a.is-active,
+.sub-menu-options li a.active{
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/*=============Estilos contenido pagina*/
+.pageContent{
+    width: calc(100% - 300px);
+    background-color: #fff;
+    transition: all .25s ease-in-out;
+}
+.pageContent-compact{
+    width: calc(100% - 86px);
+}
+.pageContent-change{
+    width: 100%;
+}
+/*=============Estilos detalle de venta*/
+.sale-details{
+    display: flex;
+    justify-content: space-between;
+    transition: all .3s ease-in-out;
+    padding: 5px;
+}
+.sale-details:hover{
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+/*=====================================================
+                    Media  Queries
+======================================================*/
+@media (max-width: 750px){
+    .navLateral{
+        pointer-events: none;
+        opacity: 0;
+        width: 0;
+        border-right: none;
+    }
+    .navLateral-change{
+        width: 300px;
+        pointer-events: auto;
+        opacity: 1;
+        border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .pageContent{
+        width: 100%;
+    }
+    .pageContent-change{
+       width: calc(100% - 300px);
+    }
+}
+
+/* Responsive utilities and improved breakpoints */
+.table-responsive{ overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.form-row{ display:flex; gap:10px; flex-wrap:wrap; }
+.form-row .field{ flex:1 1 200px; min-width:150px; }
+
+@media (max-width: 1024px){
+
+/* Dashboard quicklinks styles */
+.dashboard-tiles .box{
+    border-radius: 8px;
+    transition: all .18s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+}
+.dashboard-tiles .box .icon{ font-size: 36px; margin-bottom: 6px; }
+.dashboard-tiles .box .heading{ margin: 0; font-weight: 600; }
+.dashboard-quicklink{ padding: 1.6rem 1rem; display: block; }
+.dashboard-quicklink:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.dashboard-quicklink.ql-red .icon{ color: #ff3860; }
+.dashboard-quicklink.ql-blue .icon{ color: #3273dc; }
+.dashboard-quicklink.ql-green .icon{ color: #23d160; }
+.dashboard-quicklink.ql-yellow .icon{ color: #ffdd57; color: #ffdd57; }
+
+/* Dashboard counters style to match the provided image */
+.dashboard-stats{ margin-top: 8px; }
+.dashboard-stats .level-item{ padding: 22px 0; }
+.dashboard-stats .level-item a{ display: block; text-align: center; color: inherit; text-decoration: none; }
+.dashboard-stats .level-item .heading{ color: #3F51B5; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 8px; }
+.dashboard-stats .level-item .heading .fa{ color: #3F51B5; margin-right: 6px; }
+.dashboard-stats .level-item .title{ font-size: 34px; font-weight: 700; color: #222; margin-top: 6px; }
+.dashboard-stats .level-item .fa{ color: #3F51B5; font-size: 18px; display:inline-block; }
+
+@media (max-width: 768px){
+    .dashboard-stats .level-item{ padding: 14px 0; }
+    .dashboard-stats .level-item .title{ font-size: 26px; }
+    .dashboard-tiles .column{ flex: 0 0 50%; max-width:50%; }
+}
+
+/* Card style for each access item */
+.dashboard-access{
+    display: inline-block;
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: #fff;
+    min-width: 140px;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.dashboard-access .heading{ color: #3F51B5; text-transform: uppercase; font-size: .75rem; letter-spacing: .9px; }
+.dashboard-access .title{ font-size: 34px; font-weight: 700; color: #222; margin-top: 6px; }
+.dashboard-access:hover{ transform: translateY(-6px); box-shadow: 0 18px 36px rgba(31,47,70,0.06); }
+
+/* Slight spacing around items so they don't touch edges */
+.dashboard-stats .level-item{ padding: 26px 12px; }
+
+/* Variant for stats-like accesses (small label + large number, no card) */
+.dashboard-stats .dashboard-access{
+    background: transparent;
+    box-shadow: none;
+    padding: 6px 8px;
+    min-width: auto;
+    border-radius: 0;
+    display: block;
+    text-align: left;
+}
+.dashboard-stats .dashboard-access .heading{
+    display: inline-block;
+    color: #4f5bd5;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.dashboard-stats .dashboard-access .heading .fa{
+    color: #4f5bd5;
+    margin-right: 8px;
+    font-size: 14px;
+}
+.dashboard-stats .dashboard-access .title{
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+.dashboard-stats .dashboard-access:hover{ transform: none; box-shadow: none; }
+
+
+
+    .navLateral{ width: 250px; }
+    .pageContent{ width: calc(100% - 250px); }
+}
+
+@media (max-width: 768px){
+    /* Make sidebar an overlay on small screens */
+    .navLateral{
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 300px;
+        transform: translateX(-110%);
+        transition: transform .25s ease-in-out;
+        z-index: 2000;
+        box-shadow: 2px 0 18px rgba(0,0,0,0.18);
+        background: linear-gradient(180deg,#0b3d91 0%, #052a61 100%);
+    }
+    /* When nav is toggled, slide it in */
+    .navLateral.navLateral-change{ transform: translateX(0); pointer-events: auto; opacity: 1; }
+
+    /* Overlay behind nav */
+    .nav-overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1500;
+        display: none;
+    }
+    .navLateral.navLateral-change + .nav-overlay{ display: block; }
+
+    .pageContent{ width: 100%; }
+
+    /* Evitar scroll horizontal global en móviles; las tablas siguen siendo desplazables con .table-responsive */
+    body{ overflow-x: hidden; }
+
+    /* Prevent pageContent from being resized when sidebar opens on mobile */
+    .pageContent-change{ width: 100% !important; }
+
+    /* Make tables scrollable and readable on small screens */
+    .pageContent table{
+        display: block;
+        width: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Improve touch targets for controls */
+    .pageContent .button, .pageContent button, .pageContent input[type="button"], .pageContent input[type="submit"]{
+        min-height: 40px;
+        padding: 10px 14px;
+    }
+    .pageContent input, .pageContent select, .pageContent textarea{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Tweak navbar icons spacing for small screens */
+    .navBar-options ul{ gap:6px; }
+    .navBar-options-list ul li{ font-size:18px; padding:0 6px; }
+    .navBar-options-list ul li img{ width:34px; height:34px; }
+
+    /* Debug outline for overflow (enable via ?debug_overflow=1) */
+    .overflow-debug-outline{ outline: 3px solid rgba(255,0,0,0.9) !important; background: rgba(255,0,0,0.03) !important; z-index: 9999 !important; }
+    .overflow-debug-outline::after{ content: attr(data-overflow-width) 'px'; position: absolute; right: 6px; top: 6px; background: rgba(0,0,0,0.7); color:#fff; padding:2px 6px; font-size:11px; border-radius:3px; }
+}
+
+/* Defensive mobile overflow prevention (applied only on small screens) */
+@media (max-width: 768px){
+    html, body { max-width: 100vw; overflow-x: hidden; }
+    .page-container, main.page-container { max-width: 100vw; overflow-x: hidden; }
+    .pageContent, .full-width, .container { max-width: 100vw; box-sizing: border-box; overflow-x: hidden; }
+    .columns { max-width: 100vw; box-sizing: border-box; }
+    .columns .column { min-width: 0 !important; box-sizing: border-box; }
+    .box { max-width: 100%; box-sizing: border-box; }
+    img, svg, iframe { max-width: 100%; height: auto; }
+    /* keep scroll for intentionally wide elements like .table-responsive */
+    .table-responsive, .pageContent table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* Additional fixes scoped to product list page to prevent mobile overflow */
+@media (max-width: 768px){
+    .product-list-page .columns.is-mobile{
+        flex-wrap: wrap !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .product-list-page .columns.is-mobile > .column{
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .product-list-page .columns.is-mobile > .column.is-narrow{
+        flex: 0 0 auto !important;
+        width: auto !important;
+        max-width: 160px !important;
+    }
+    .product-list-page .field.is-grouped{ display:flex; flex-wrap:wrap; gap:.5rem; }
+    .product-list-page .field.is-grouped .control{ flex: 0 0 auto; }
+
+    /* Prevent absolute header buttons pushing content sideways */
+    .product-list-page #btn-collapse-menu{ position: absolute !important; right: 8px !important; left: auto !important; }
+    .product-list-page .navBar-options-list ul li{ max-width: 40px; overflow: hidden; }
+}
+
+/* Additional defensive caps for any remaining overflow inside product-list-page */
+@media (max-width: 768px){
+    .product-list-page, .product-list-page .pageContent, .product-list-page .container{
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        overflow-x: visible !important;
+    }
+    .product-list-page .columns, .product-list-page .columns.is-mobile{
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    .product-list-page .columns.is-mobile > .column{ min-width: 0 !important; }
+    .product-list-page .pagination{ width: 100% !important; box-sizing: border-box !important; padding: .25rem .5rem !important; }
+    .product-list-page .overflow-debug-outline{ box-sizing: border-box !important; max-width: 100% !important; min-width: 0 !important; word-break: break-word !important; }
+    .product-list-page .nav-actions, .product-list-page .navBar-options-list{ max-width: calc(100% - 56px) !important; overflow: hidden !important; }
+    .product-list-page .button.is-info, .product-list-page .button.is-light{ white-space: nowrap !important; }
+}
+
+/* Tweak specific elements reported by overflow-debug: remove negative offsets, constrain inline max-widths */
+@media (max-width:768px){
+    /* Force icon/chevron markers to behave inside flow */
+    .product-list-page .overflow-debug-outline.fas,
+    .product-list-page .overflow-debug-outline span.fas,
+    .product-list-page .overflow-debug-outline i.fas,
+    .product-list-page .overflow-debug-outline .fa-chevron-down,
+    .product-list-page .overflow-debug-outline .fa-times{
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        margin-left: .25rem !important;
+        margin-right: .25rem !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+    }
+
+    /* Override inline max-width on narrow columns that caused overflow */
+    .product-list-page .column[style*="max-width"]{
+        max-width: 160px !important;
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Constrain grouped controls so they wrap instead of expanding the row */
+    .product-list-page .field.is-grouped{ gap:.4rem; align-items:center; }
+    .product-list-page .field.is-grouped .control{ flex: 0 0 auto; max-width: 48% !important; }
+
+    /* Clip any remaining overflow from header actions */
+    .product-list-page .header-actions, .product-list-page .navBar-options-list{ overflow:hidden !important; white-space:nowrap !important; }
+}
+
+/* Ensure filter buttons wrap and don't push row width on small screens */
+@media (max-width: 768px){
+    .product-list-page .field.is-grouped,
+    .product-list-page .field.is-grouped .controls{
+        display:flex !important;
+        flex-wrap:wrap !important;
+        gap:.4rem !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+    }
+    .product-list-page .field.is-grouped .control,
+    .product-list-page .field.is-grouped .control a,
+    .product-list-page .field.is-grouped .control button{
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+        max-width: 48% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    .product-list-page .field.is-grouped .control a.button.is-light,
+    .product-list-page .field.is-grouped .control button.button.is-info{
+        padding-left: .6rem !important;
+        padding-right: .6rem !important;
+    }
+    /* If still too tight, stack the last control full-width */
+    .product-list-page .field.is-grouped .control.full-width-on-mobile{ max-width:100% !important; width:100% !important; }
+}
+
+/* Final guard: make any nested is-narrow column that holds grouped controls expand on mobile */
+@media (max-width: 768px){
+    .product-list-page .columns.is-mobile .column.is-narrow{
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: .25rem !important;
+        padding-right: .25rem !important;
+    }
+    .product-list-page .columns.is-mobile .column.is-narrow .field.is-grouped .control{
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+    }
+    .product-list-page a.full-width-on-mobile{
+        display:block !important;
+        width:100% !important;
+        max-width:100% !important;
+        box-sizing:border-box !important;
+    }
+}
+
+/* Increase size of the 'Aplicar' button on mobile to avoid being cut off */
+@media (max-width: 768px){
+    .product-list-page .field.is-grouped .control button.is-info,
+    .product-list-page .field.is-grouped .control .button.is-info{
+        min-width: 120px !important;
+        padding-left: 0.9rem !important;
+        padding-right: 0.9rem !important;
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        box-sizing: border-box !important;
+    }
+    /* Allow the apply button to take a bit more room than other controls */
+    .product-list-page .field.is-grouped .control button.is-info{ max-width: 65% !important; }
+}
+
+/* Specifically make the column that contains grouped controls span full width on mobile
+   and make anchor buttons with `full-width-on-mobile` occupy full width. */
+@media (max-width: 768px){
+    .product-list-page .columns.is-mobile > .column .field.is-grouped{ width:100% !important; }
+    .product-list-page .field.is-grouped a.full-width-on-mobile,
+    .product-list-page .field.is-grouped .control a.full-width-on-mobile{
+        display:block !important;
+        width:100% !important;
+        max-width:100% !important;
+        box-sizing:border-box !important;
+        text-align:center !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+    }
+    /* Ensure control wrapper doesn't limit the anchor */
+    .product-list-page .field.is-grouped .control{ max-width:100% !important; }
+}
+
+/* Small phones: increase touch targets */
+@media (max-width: 480px){
+    .navLateral{ width: 280px; }
+    .navLateral.navLateral-change + .nav-overlay{ display:block; }
+    .navBar{ height:50px; }
+    .navBar-options .fa-exchange-alt{ font-size:26px; margin-left:10px; }
+}
+
+/* Login page styling (scoped) */
+.main-container{ background: linear-gradient(180deg,#072a68 0%, #0b4b8a 100%); }
+.main-container .box.login{
+    max-width: 420px;
+    width: 92%;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.main-container .box.login .title{ margin-bottom: .75rem; }
+.main-container .box.login .fa-user-circle{ color:#6b6b6b; }
+
+/* Position the submit button inline with the password field using flex */
+.box.login .login-field-with-btn .control{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+.box.login .login-input-with-btn{
+    flex:1 1 auto;
+    padding-right: .5rem;
+}
+.box.login .login-submit{
+    flex: 0 0 auto;
+    margin-left: .25rem;
+    padding: .55rem .9rem;
+    white-space: nowrap;
+}
+
+/* Small screens: stack input and button vertically for better touch targets */
+@media (max-width: 480px){
+    .box.login .login-field-with-btn .control{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:.5rem;
+    }
+    .box.login .login-input-with-btn{ padding-right: .5rem; }
+    .box.login .login-submit{ display:block; width:100%; margin-left:0; }
+    .main-container .box.login{ padding: 1.25rem; margin: 1.5rem auto; }
+}
+
+
+/* Responsive rules for product list items (scoped to product-list-page) */
+.product-list-page .product-item{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.product-list-page .product-item .pi-meta{ flex: 0 0 auto; }
+.product-list-page .product-item .pi-details{ flex: 1 1 220px; }
+.product-list-page .product-item .pi-stock{ flex: 0 0 100px; }
+.product-list-page .product-item .pi-prices{ flex: 0 0 160px; }
+.product-list-page .product-item .pi-actions{ flex: 0 0 auto; }
+
+@media (max-width: 768px){
+    .product-list-page .product-item{ padding: .75rem .5rem; }
+    .product-list-page .product-item .pi-meta,
+    .product-list-page .product-item .pi-details,
+    .product-list-page .product-item .pi-stock,
+    .product-list-page .product-item .pi-prices,
+    .product-list-page .product-item .pi-actions{
+        flex: 1 1 100%;
+        text-align: left;
+    }
+    .product-list-page .product-item .pi-meta{ display:flex; align-items:center; gap:.75rem; }
+    .product-list-page .product-item .pi-actions{ margin-top: .5rem; }
+}
+
+/* Prevent horizontal overflow caused by long contents */
+html, body { max-width: 100%; }
+.page-container, .pageContent { overflow-x: hidden; }
+
+/* Allow product item children to shrink to avoid forcing horizontal scroll */
+.product-list-page .product-item, .product-list-page .product-item * { min-width: 0 !important; }
+.product-list-page .product-item img{ max-width:100%; height:auto; display:block; }
+
+/* Ensure table-responsive handles overflow when needed */
+.table-responsive{ overflow-x:auto; }
+
+/* Spacing for Nueva Venta form: give the right column a little breathing room */
+@media (min-width: 769px){
+    .sale-new-page .columns > .column.is-one-quarter{
+        padding-left: 1rem !important;
+    }
+}
+@media (max-width: 768px){
+    /* On small screens, add horizontal padding so the form isn't flush with edge */
+    .sale-new-page .columns > .column.is-one-quarter{
+        padding-left: .75rem !important;
+        padding-right: .75rem !important;
+    }
+    .sale-new-page .columns > .column.pb-6{ padding-left:.5rem !important; padding-right:.5rem !important; }
+}
+
+    /* Mobile fix: ensure quantity number inside the product inputs is visible */
+    /* Targets the sale quantity input used in Nueva Venta (class: sale_input-cant) */
+    input.sale_input-cant,
+    input.input.sale_input-cant{
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        caret-color: #000 !important;
+        -webkit-appearance: textfield !important;
+        appearance: textfield !important;
+    }
+
+    /* Strong fallback for webkit mobile browsers: force visible text and remove native number controls */
+    input.sale_input-cant::-webkit-outer-spin-button,
+    input.sale_input-cant::-webkit-inner-spin-button{
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+        display: none !important;
+    }
+
+    input.sale_input-cant::placeholder{ color: rgba(0,0,0,0.45) !important; }
+    input.sale_input-cant:-webkit-autofill,
+    input.sale_input-cant:-internal-autofill-selected{
+        -webkit-text-fill-color: #000 !important;
+    }
+    input.sale_input-cant{ background-color: #fff !important; opacity: 1 !important; text-shadow: none !important; box-shadow: none !important; }
+
+    /* Ensure selectors also match if input type is changed to text (inputmode numeric) */
+    input[type="text"].sale_input-cant, input.sale_input-cant[type="text"]{
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+    }

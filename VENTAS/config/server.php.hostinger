@@ -1,0 +1,6 @@
+<?php
+// Respaldo de credenciales de producción/hosting (no modificar)
+const DB_SERVER = "127.0.0.1";
+const DB_NAME   = "u571001880_ventas";
+const DB_USER   = "u571001880_ventas";  // credenciales de hosting
+const DB_PASS   = "Emi40201288@";    // credenciales de hosting

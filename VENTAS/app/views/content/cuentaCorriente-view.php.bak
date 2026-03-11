@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="title">Cuentas Corrientes</h1>
+
+    <table class="table is-bordered is-striped is-fullwidth">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Saldo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <?php
+            use app\controllers\cuentaCorrienteController;
+            $cc = new cuentaCorrienteController();
+            $datos = $cc->listar();
+
+            while($row = $datos->fetch()){
+                $color = ($row['saldo'] > 0) ? 'has-text-danger' : 'has-text-success';
+
+                echo '
+                <tr>
+                    <td>'.$row['cliente_nombre'].' '.$row['cliente_apellido'].'</td>
+                    <td class="'.$color.'">$ '.number_format($row['saldo'],2).'</td>
+                    <td>
+                        <a class="button is-small is-info"
+                           href="'.APP_URL.'ccMovimientos/'.$row['cliente_id'].'/">
+                           Movimientos
+                        </a>
+                    </td>
+                </tr>';
+            }
+        ?>
+
+        </tbody>
+    </table>
+</div>

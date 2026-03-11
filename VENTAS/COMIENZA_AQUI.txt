@@ -1,0 +1,13 @@
+# Módulo de Tipo de Cambio deshabilitado
+
+Este repositorio fue modificado para operar exclusivamente en pesos argentinos (ARS).
+
+El soporte de conversión USD ↔ ARS y el panel de "Tipo de Cambio" fueron desactivados y las vistas relacionadas retiradas.
+
+Para revertir a soporte dual (USD↔ARS), revisa y restaura los archivos modificados:
+- `config/app.php` (activar `CAMBIO_API_ENABLED`)
+- `app/controllers/cambioController.php`
+- `app/views/content/cambio-view.php`
+- `app/ajax/cambioAjax.php`
+
+Nota: los documentos originales que describían el sistema de tipo de cambio fueron actualizados para reflejar esta decisión.

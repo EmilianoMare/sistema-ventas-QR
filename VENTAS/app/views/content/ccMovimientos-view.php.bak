@@ -1,0 +1,48 @@
+<?php
+$pagina = explode("/", $_GET['views'] ?? '');
+$id = $pagina[1] ?? 0;
+
+if($id <= 0){
+    echo '<div class="notification is-danger">Cliente inválido</div>';
+    exit;
+}
+?>
+
+<div class="container is-fluid mb-6">
+    <h1 class="title">Movimientos de Cuenta Corriente</h1>
+</div>
+
+<div class="container pb-6 pt-6">
+    <table class="table is-bordered is-striped is-fullwidth">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Detalle</th>
+                <th>Debe</th>
+                <th>Haber</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+use app\controllers\clientController;
+use app\controllers\cambioController;
+
+$insCliente = new clientController();
+$insCambio = new cambioController();
+
+$mov = $insCliente->listarMovimientosCuentaCorriente($id);
+
+while($row=$mov->fetch()){
+    $monto_ars = $insCambio->convertirUsdArs($row['monto']);
+    echo '
+    <tr>
+        <td>'.$row['fecha'].'</td>
+        <td>'.$row['detalle'].'</td>
+        <td>'.($row['tipo']=="DEBE"?'<strong>USD:</strong> '.MONEDA_SIMBOLO.number_format($row['monto'],2).'<br><strong>ARS:</strong> $'.number_format($monto_ars,2):'<span style="opacity:0.5">-</span>').'</td>
+        <td>'.($row['tipo']=="HABER"?'<strong>USD:</strong> '.MONEDA_SIMBOLO.number_format($row['monto'],2).'<br><strong>ARS:</strong> $'.number_format($monto_ars,2):'<span style="opacity:0.5">-</span>').'</td>
+    </tr>';
+}
+?>
+        </tbody>
+    </table>
+</div>

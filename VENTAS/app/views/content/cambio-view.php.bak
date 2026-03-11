@@ -1,0 +1,260 @@
+<?php
+use app\controllers\cambioController;
+
+$insCambio = new cambioController();
+$cambio_actual = $insCambio->obtenerTipoCambio();
+$info_cambio = $insCambio->obtenerInfoTipoCambio();
+?>
+
+<div class="container is-fluid mb-6">
+    <h1 class="title">💱 Tipo de Cambio USD-ARS</h1>
+    <p class="subtitle">Administrar el tipo de cambio para conversión de monedas</p>
+</div>
+
+<div class="container pb-6 pt-6">
+    <div class="columns">
+        <div class="column is-two-thirds">
+            <!-- Panel actual -->
+            <div class="box has-background-info-light mb-5">
+                <h2 class="subtitle">Tipo de Cambio Actual</h2>
+                <div class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">1 USD =</p>
+                            <p class="title is-3 has-text-info">$ <span id="precioCambio"><?php echo number_format($cambio_actual, 2); ?></span> ARS</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Última actualización</p>
+                            <p class="title is-6">
+                                <?php
+                                    if(isset($info_cambio['fecha_actualizacion'])){
+                                        echo date('d/m/Y H:i:s', strtotime($info_cambio['fecha_actualizacion']));
+                                    } else {
+                                        echo "No disponible";
+                                    }
+                                ?>
+                            </p>
+                            <p class="subtitle is-7" style="margin-top: 5px;">
+                                <?php
+                                        $fuente = isset($info_cambio['fuente']) ? $info_cambio['fuente'] : 'Sistema';
+                                        $detalle = '';
+                                        if(stripos($fuente, 'Banco Naci') !== false || stripos($fuente, 'Banco Nación') !== false){
+                                            $detalle = ' (Venta)';
+                                        }
+                                        echo 'Fuente: <span id="fuenteCambio">'.htmlspecialchars($fuente).$detalle.'</span>';
+                                    ?>
+                            </p>
+                                <input type="hidden" id="fechaCambio" value="<?php echo isset($info_cambio['fecha_actualizacion']) ? $info_cambio['fecha_actualizacion'] : ''; ?>">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario actualizar -->
+            <div class="box">
+                <h2 class="subtitle">Actualizar Tipo de Cambio</h2>
+                
+                <form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/cambioAjax.php" method="POST" autocomplete="off">
+                    
+                    <input type="hidden" name="modulo_cambio" value="actualizar_cambio">
+
+                    <div class="columns">
+                        <div class="column is-8">
+                            <div class="field">
+                                <label class="label">Nuevo Valor (1 USD = ? ARS)</label>
+                                <div class="control">
+                                    <input 
+                                        class="input" 
+                                        type="number" 
+                                        name="nuevo_valor" 
+                                        step="0.01" 
+                                        min="1"
+                                        value="<?php echo number_format($cambio_actual, 2); ?>"
+                                        placeholder="Ingresa el nuevo valor"
+                                        required
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="field">
+                                <label class="label">&nbsp;</label>
+                                <div class="control">
+                                    <button type="submit" class="button is-success is-fullwidth">
+                                        <span class="icon"><i class="fas fa-sync-alt"></i></span>
+                                        <span>Actualizar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Botón para actualizar desde API -->
+            <div class="box has-background-warning-light">
+                <h3 class="subtitle">Actualización Automática (Beta)</h3>
+                <p class="mb-4">Obtener el tipo de cambio en tiempo real desde API externa (requiere conexión a internet)</p>
+                <?php if($insCambio->isApiEnabled()): ?>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <button class="button is-warning" id="btnActualizarAPI">
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                            <span>Actualizar desde API</span>
+                        </button>
+                        <button class="button is-light" id="btnToggleModo" data-enabled="1">Deshabilitar auto</button>
+                    </div>
+                    <p class="help is-warning mt-3">Estado: <strong>Activado</strong> — TTL: <?php echo defined('CAMBIO_API_TTL') ? CAMBIO_API_TTL : 3600; ?>s</p>
+                <?php else: ?>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <button class="button is-warning" id="btnActualizarAPI" disabled>
+                            <span class="icon"><i class="fas fa-globe"></i></span>
+                            <span>Actualizar desde API (No disponible)</span>
+                        </button>
+                        <button class="button is-light" id="btnToggleModo" data-enabled="0">Habilitar auto</button>
+                    </div>
+                    <p class="help is-warning mt-3">⚠️ Esta función está en desarrollo</p>
+                <?php endif; ?>
+            </div>
+
+        </div>
+
+        <!-- Panel de info -->
+        <div class="column is-one-third">
+            <div class="box">
+                <h3 class="title is-5">ℹ️ Información</h3>
+                
+                <div class="content">
+                    <h4>¿Cómo funciona?</h4>
+                    <ol>
+                        <li>El valor se utiliza para convertir entre USD y ARS</li>
+                        <li>Se muestra automáticamente en productos y ventas</li>
+                        <li>Puedes actualizar el valor manualmente</li>
+                        <li>Los precios se recalculan automáticamente</li>
+                    </ol>
+
+                    <h4 class="mt-5">Ejemplo de conversión:</h4>
+                    <p>Si el cambio es $ <?php echo number_format($cambio_actual, 2); ?> ARS por 1 USD:</p>
+                    <ul>
+                        <li>$100 USD = $ <?php echo number_format(100 * $cambio_actual, 2); ?> ARS</li>
+                        <li>$50 USD = $ <?php echo number_format(50 * $cambio_actual, 2); ?> ARS</li>
+                    </ul>
+                </div>
+
+                <div class="notification is-info is-light">
+                    <strong>Nota:</strong> Este tipo de cambio es global y se aplica a todos los productos y ventas del sistema.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.level {
+    margin-bottom: 0 !important;
+}
+.level-item {
+    padding: 20px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.getElementById('btnActualizarAPI');
+    const msgBox = document.createElement('div');
+    msgBox.id = 'apiMessage';
+    msgBox.style.marginTop = '10px';
+    const parentBox = document.querySelector('.box.has-background-warning-light');
+    if(parentBox) parentBox.appendChild(msgBox);
+
+    if(!btn) return;
+
+    btn.addEventListener('click', function(){
+        btn.disabled = true;
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-pulse"></i></span><span>Actualizando...</span>';
+        msgBox.innerHTML = '';
+
+        // Llamar primero al endpoint que fuerza la consulta a la API
+        fetch('<?php echo APP_URL; ?>app/ajax/cambioAjax.php?obtener=cambio_api', {cache: 'no-store'})
+        .then(r => r.json())
+        .then(data => {
+            if(data.status === 'success'){
+                // Obtener la información actualizada desde el endpoint local y refrescar la UI
+                return fetch('<?php echo APP_URL; ?>app/ajax/cambioAjax.php?obtener=cambio', {cache: 'no-store'})
+                    .then(r2 => r2.json())
+                    .then(info => ({api: data, info: info}));
+            } else if(data.status === 'disabled'){
+                throw new Error(data.mensaje || 'Actualización automática deshabilitada');
+            } else {
+                throw new Error(data.mensaje || 'Error al consultar API');
+            }
+        })
+        .then(result => {
+            const info = result.info;
+            // Actualizar precio
+            if(info.valor !== undefined){
+                const precioEl = document.getElementById('precioCambio');
+                precioEl.textContent = parseFloat(info.valor).toFixed(2);
+            }
+            // Actualizar fecha y fuente
+            const fechaHidden = document.getElementById('fechaCambio');
+            if(info.fecha){
+                fechaHidden.value = info.fecha;
+                // actualizar el visible fecha (the element showing date is the second .level-item .title.is-6)
+                const fechaEls = document.querySelectorAll('.box.has-background-info-light .level-item .title.is-6');
+                if(fechaEls && fechaEls.length>0){
+                    fechaEls[0].textContent = new Date(info.fecha).toLocaleString();
+                }
+            }
+            if(info.fuente){
+                const fuenteEl = document.getElementById('fuenteCambio');
+                if(fuenteEl) fuenteEl.textContent = info.fuente + (info.fuente.toLowerCase().indexOf('banco')!==-1 ? ' (Venta)' : '');
+            }
+
+            msgBox.innerHTML = '<div class="notification is-success">Tipo de cambio actualizado: ' + (result.info.valor ? parseFloat(result.info.valor).toFixed(2) : '') + ' ARS</div>';
+        })
+        .catch(err => {
+            msgBox.innerHTML = '<div class="notification is-danger">Error: ' + (err.message || err) + '</div>';
+        })
+        .finally(() => {
+            btn.disabled = false;
+            btn.innerHTML = oldText;
+        });
+    });
+    // Toggle auto/manual mode
+    const btnToggle = document.getElementById('btnToggleModo');
+    if(btnToggle){
+        btnToggle.addEventListener('click', function(){
+            const enable = btnToggle.getAttribute('data-enabled') === '1' ? 0 : 1;
+            btnToggle.disabled = true;
+            fetch('<?php echo APP_URL; ?>app/ajax/cambioAjax.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'modulo_cambio=toggle_api_mode&habilitar='+encodeURIComponent(enable)
+            })
+            .then(r=>r.json())
+            .then(d=>{
+                if(d.status === 'success'){
+                    // actualizar etiqueta y estado del botón
+                    btnToggle.setAttribute('data-enabled', d.enabled ? '1' : '0');
+                    btnToggle.textContent = d.enabled ? 'Deshabilitar auto' : 'Habilitar auto';
+                    const upBtn = document.getElementById('btnActualizarAPI');
+                    if(upBtn) upBtn.disabled = d.enabled ? false : true;
+                    const msg = document.getElementById('apiMessage');
+                    if(msg) msg.innerHTML = '<div class="notification is-success">Modo actualizado: ' + (d.enabled ? 'Automático' : 'Manual') + '</div>';
+                } else {
+                    throw new Error(d.mensaje || 'Error al cambiar modo');
+                }
+            })
+            .catch(err=>{
+                const msg = document.getElementById('apiMessage');
+                if(msg) msg.innerHTML = '<div class="notification is-danger">'+(err.message||err)+'</div>';
+            })
+            .finally(()=>{ btnToggle.disabled = false; });
+        });
+    }
+});
+</script>

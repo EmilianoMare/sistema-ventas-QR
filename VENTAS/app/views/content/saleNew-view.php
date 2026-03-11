@@ -1,0 +1,1131 @@
+<div class="container is-fluid mb-6">
+	<h1 class="title">Ventas</h1>
+	<h2 class="subtitle"><i class="fas fa-cart-plus fa-fw"></i> &nbsp; Nueva venta</h2>
+</div>
+
+<div class="container pb-6 pt-6 sale-new-page">
+    <?php
+        $check_empresa=$insLogin->seleccionarDatos("Normal","empresa LIMIT 1","*",0);
+
+        if($check_empresa->rowCount()==1){
+    ?>
+                                        <!-- Input de cantidad removido según solicitud -->
+    <div class="columns">
+
+        <div class="column pb-6">
+
+            <p class="has-text-centered pt-6 pb-6">
+                <small>Para agregar productos usa el buscador por <strong>nombre, marca o modelo</strong>. Escribe un término y selecciona una sugerencia.</small>
+            </p>
+            <form class="pt-6 pb-6 form-row" id="sale-product-search-form" autocomplete="off">
+                <div class="field has-addons">
+                    <p class="control is-expanded" style="position:relative">
+                        <input
+                            id="sale-product-search-input"
+                            class="input"
+                            type="search"
+                            inputmode="search"
+                            name="sale_product_search"
+                            placeholder="Buscar producto por nombre, marca o modelo"
+                            maxlength="70"
+                            aria-label="Buscar producto"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-expanded="false"
+                            aria-controls="sale-autocomplete-list"
+                            aria-activedescendant=""
+                            autocomplete="off"
+                        >
+
+                        <div id="sale-autocomplete-list" class="box" role="listbox" aria-label="Sugerencias de productos" style="position:absolute;left:0;right:0;top:100%;z-index:99;display:none;max-height:280px;overflow:auto;padding:0.25rem 0;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.08);"></div>
+
+                        <div id="sale-autocomplete-live" class="is-sr-only" aria-live="polite" aria-atomic="true"></div>
+                    </p>
+                    <p class="control">
+                        <button type="submit" class="button is-info" id="btn_quick_search">
+                            <i class="fas fa-search"></i> &nbsp; Buscar
+                        </button>
+                    </p>
+                </div>
+            </form>
+            <?php
+                if(isset($_SESSION['alerta_producto_agregado']) && $_SESSION['alerta_producto_agregado']!=""){
+                    echo '
+                    <div class="notification is-success is-light">
+                      '.$_SESSION['alerta_producto_agregado'].'
+                    </div>
+                    ';
+                    unset($_SESSION['alerta_producto_agregado']);
+                }
+
+                if(isset($_SESSION['venta_codigo_factura']) && $_SESSION['venta_codigo_factura']!=""){
+            ?>
+            <div class="notification is-info is-light mb-2 mt-2">
+                <h4 class="has-text-centered has-text-weight-bold">Venta realizada</h4>
+                <p class="has-text-centered mb-2">La venta se realizó con éxito. ¿Que desea hacer a continuación? </p>
+                <br>
+                <div class="container">
+                    <div class="columns">
+                        <div class="column has-text-centered">
+                            <button type="button" class="button is-link is-light" onclick="print_invoice('<?php echo APP_URL."app/pdf/remito.php?code=".$_SESSION['venta_codigo_factura']; ?>')" >
+                                <i class="fas fa-file-export fa-2x"></i> &nbsp;
+                                Imprimir remito de entrega
+                            </button>
+                        </div>
+                        <div class="column has-text-centered">
+                            <button type="button" class="button is-link is-light" onclick="print_invoice('<?php echo APP_URL."app/pdf/invoice.php?code=".$_SESSION['venta_codigo_factura']; ?>')" >
+                                <i class="fas fa-file-invoice-dollar fa-2x"></i> &nbsp;
+                                Imprimir factura de venta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+                    unset($_SESSION['venta_codigo_factura']);
+                }
+            ?>
+            <div class="table-container">
+                <div class="table-responsive"><table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th class="has-text-centered">#</th>
+                            <th class="has-text-centered">Código</th>
+                            <th class="has-text-centered">Producto</th>
+                            <th class="has-text-centered">Cant.</th>
+                            <th class="has-text-centered">Precio</th>
+                            <th class="has-text-centered">Subtotal</th>
+                            <th class="has-text-centered">Actualizar</th>
+                            <th class="has-text-centered">Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            if(isset($_SESSION['datos_producto_venta']) && count($_SESSION['datos_producto_venta'])>=1){
+
+                                $_SESSION['venta_total']=0;
+                                $cc=1;
+
+                                foreach($_SESSION['datos_producto_venta'] as $productos){
+                        ?>
+                        <tr class="has-text-centered" >
+                            <td><?php echo $cc; ?></td>
+                            <td><?php echo $productos['producto_codigo']; ?></td>
+                            <td><?php echo $productos['venta_detalle_descripcion']; ?></td>
+                            <td>
+                                <div class="field has-addons is-justify-content-center" style="justify-content:center;">
+                                    <p class="control">
+                                        <button type="button" class="button is-primary is-rounded sale-qty-decr" aria-label="Disminuir cantidad" data-target="sale_input_<?php echo str_replace(' ', '_', $productos['producto_codigo']); ?>">−</button>
+                                    </p>
+                                    <p class="control">
+                                        <input class="input sale_input-cant has-text-centered" value="<?php echo $productos['venta_detalle_cantidad']; ?>" id="sale_input_<?php echo str_replace(" ", "_", $productos['producto_codigo']); ?>" data-codigo="<?php echo $productos['producto_codigo']; ?>" type="text" inputmode="numeric" pattern="[0-9]+" maxlength="6" style="max-width: 80px; color:#000 !important; -webkit-text-fill-color:#000 !important;">
+                                    </p>
+                                    <p class="control">
+                                        <button type="button" class="button is-primary is-rounded sale-qty-incr" aria-label="Aumentar cantidad" data-target="sale_input_<?php echo str_replace(' ', '_', $productos['producto_codigo']); ?>">+</button>
+                                    </p>
+                                </div>
+                            </td>
+                            <td><?php echo MONEDA_SIMBOLO.number_format($productos['venta_detalle_precio_venta'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></td>
+                            <td><span class="sale_subtotal" data-codigo="<?php echo $productos['producto_codigo']; ?>"><?php echo MONEDA_SIMBOLO.number_format($productos['venta_detalle_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></span></td>
+                            <td>
+                                <button type="button" class="button is-success is-rounded is-small" onclick="actualizar_cantidad('#sale_input_<?php echo str_replace(" ", "_", $productos['producto_codigo']); ?>','<?php echo $productos['producto_codigo']; ?>')" >
+                                    <i class="fas fa-redo-alt fa-fw"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <form class="FormularioAjax form-row" action="<?php echo APP_URL; ?>app/ajax/ventaAjax.php" method="POST" autocomplete="off">
+
+                                    <input type="hidden" name="producto_codigo" value="<?php echo $productos['producto_codigo']; ?>">
+                                    <input type="hidden" name="modulo_venta" value="remover_producto">
+
+                                    <button type="submit" class="button is-danger is-rounded is-small" title="Remover producto">
+                                        <i class="fas fa-trash-restore fa-fw"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <?php
+                                $cc++;
+                                $_SESSION['venta_total']+=$productos['venta_detalle_total'];
+                            }
+                        ?>
+                        <tr class="has-text-centered" >
+                            <td colspan="4"></td>
+                            <td class="has-text-weight-bold">
+                                TOTAL
+                            </td>
+                            <td class="has-text-weight-bold">
+                                <span id="venta_total_display"><?php echo MONEDA_SIMBOLO.number_format($_SESSION['venta_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></span>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <?php
+                            }else{
+                                    $_SESSION['venta_total']=0;
+                        ?>
+                        <tr class="has-text-centered" >
+                            <td colspan="8">
+                                No hay productos agregados
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table></div>
+            </div>
+        </div>
+
+        <div class="column is-one-quarter">
+            <h2 class="title has-text-centered">Datos de la venta</h2>
+            <hr>
+
+            <?php if($_SESSION['venta_total']>0){ ?>
+            <form class="FormularioAjax form-row" action="<?php echo APP_URL; ?>app/ajax/ventaAjax.php" method="POST" autocomplete="off" name="formsale" >
+                <input type="hidden" name="modulo_venta" value="registrar_venta">
+            <?php }else { ?>
+            <form class="form-row" name="formsale">
+            <?php } ?>
+
+                <div class="control mb-5">
+                    <label>Fecha</label>
+                    <div style="display:flex;gap:8px;align-items:center;">
+                        <input class="input" id="venta_fecha_detected" type="date" value="<?php echo date("Y-m-d"); ?>" readonly >
+                        <button type="button" id="btn_voice_input" class="button is-light" title="Iniciar transcripción por voz">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <input type="hidden" id="venta_fecha_hidden" name="venta_fecha_detectada" value="<?php echo date("Y-m-d"); ?>">
+                </div>
+
+                <label>Caja de ventas <?php echo CAMPO_OBLIGATORIO; ?></label><br>
+                <div class="select mb-5">
+                    <select name="venta_caja">
+                        <?php
+                            $datos_cajas=$insLogin->seleccionarDatos("Normal","caja","*",0);
+
+                            while($campos_caja=$datos_cajas->fetch()){
+                                if($campos_caja['caja_id']==$_SESSION['caja']){
+                                    echo '<option value="'.$campos_caja['caja_id'].'" selected="" >Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].' (Actual)</option>';
+                                }else{
+                                    echo '<option value="'.$campos_caja['caja_id'].'">Caja No.'.$campos_caja['caja_numero'].' - '.$campos_caja['caja_nombre'].'</option>';
+                                }
+                            }
+                        ?>
+                    </select>
+                </div>
+                <br>
+
+                <label>Cliente</label>
+                <?php
+                    if(isset($_SESSION['datos_cliente_venta']) && count($_SESSION['datos_cliente_venta'])>=1 && $_SESSION['datos_cliente_venta']['cliente_id']!=1){
+                ?>
+                <div class="field has-addons mb-5">
+                    <div class="control">
+                        <input class="input" type="text" readonly id="venta_cliente" value="<?php echo $_SESSION['datos_cliente_venta']['cliente_nombre']." ".$_SESSION['datos_cliente_venta']['cliente_apellido']; ?>" >
+                    </div>
+                    <div class="control">
+                        <a class="button is-danger" title="Remove cliente" id="btn_remove_client" onclick="remover_cliente(<?php echo $_SESSION['datos_cliente_venta']['cliente_id']; ?>)">
+                            <i class="fas fa-user-times fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <?php 
+                    }else{
+                        $datos_cliente=$insLogin->seleccionarDatos("Normal","cliente WHERE cliente_id='1'","*",0);
+                        if($datos_cliente->rowCount()==1){
+                            $datos_cliente=$datos_cliente->fetch();
+
+                            $_SESSION['datos_cliente_venta']=[
+                                "cliente_id"=>$datos_cliente['cliente_id'],
+                                "cliente_tipo_documento"=>$datos_cliente['cliente_tipo_documento'],
+                                "cliente_numero_documento"=>$datos_cliente['cliente_numero_documento'],
+                                "cliente_nombre"=>$datos_cliente['cliente_nombre'],
+                                "cliente_apellido"=>$datos_cliente['cliente_apellido']
+                            ];
+
+                        }else{
+                            $_SESSION['datos_cliente_venta']=[
+                                "cliente_id"=>1,
+                                "cliente_tipo_documento"=>"N/A",
+                                "cliente_numero_documento"=>"N/A",
+                                "cliente_nombre"=>"Publico",
+                                "cliente_apellido"=>"General"
+                            ];
+                        }
+                ?>
+                <div class="field has-addons mb-5">
+                    <div class="control">
+                        <input class="input" type="text" readonly id="venta_cliente" value="<?php echo $_SESSION['datos_cliente_venta']['cliente_nombre']." ".$_SESSION['datos_cliente_venta']['cliente_apellido']; ?>" >
+                    </div>
+                    <div class="control">
+                        <a class="button is-info js-modal-trigger" data-target="modal-js-client" title="Agregar cliente" id="btn_add_client" >
+                            <i class="fas fa-user-plus fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
+                
+
+
+
+                <div class="control mb-5">
+                    <label>Forma de pago <?php echo CAMPO_OBLIGATORIO; ?></label>
+                <div class="select is-fullwidth">
+                <select name="forma_pago" id="forma_pago">
+                    <option value="CONTADO">Contado</option>
+                    <option value="CUENTA_CORRIENTE">Cuenta corriente</option>
+                </select>
+                </div>
+                </div>
+
+
+
+
+
+                <div class="control mb-4">
+                    <label>Descuento</label>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <div class="select">
+                                <select name="venta_desc_tipo" id="venta_desc_tipo">
+                                    <option value="NINGUNO">Ninguno</option>
+                                    <option value="FIJO">Fijo</option>
+                                    <option value="PORC">Porcentaje</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control" style="width:140px;">
+                            <input class="input" type="text" name="venta_desc_valor" id="venta_desc_valor" value="0.00" pattern="[0-9.]{1,25}" maxlength="25" >
+                        </div>
+                        <div class="control" style="align-self:center;">
+                            <small id="venta_desc_help" class="has-text-grey">Valor según tipo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control mb-5">
+                    <label>Total pagado por cliente <?php echo CAMPO_OBLIGATORIO; ?></label>
+                    <input class="input" type="text" name="venta_abono" id="venta_abono" value="0.00" pattern="[0-9.]{1,25}" maxlength="25" >
+                </div>
+
+                <!-- Zona para mostrar resultados de voz/transcripción -->
+                <div id="voice_transcript_box" style="margin-top:12px;display:none;">
+                    <label>Transcripción detectada</label>
+                    <div id="voice_result" style="background:#fafafa;border:1px solid #eee;padding:8px;border-radius:4px;color:#111;"></div>
+                    <input type="hidden" id="venta_numero_hidden" name="venta_numero_detectado" value="">
+                    <input type="hidden" id="venta_usuario_hidden" name="venta_usuario_detectado" value="">
+                    <input type="hidden" id="venta_barrio_hidden" name="venta_barrio_detectado" value="">
+                </div>
+
+                <div class="control mb-5">
+                    <label>Cambio devuelto a cliente</label>
+                    <input class="input" type="text" id="venta_cambio" value="0.00" readonly >
+                </div>
+
+                <div class="control mb-5">
+    <label>Deuda generada</label>
+    <input class="input" type="text" id="venta_deuda" value="0.00" readonly>
+</div>
+
+                <?php
+                    // Recompute total from session subtotals to ensure consistency with line items
+                    $venta_total_raw = 0.00;
+                    if(isset($_SESSION['datos_producto_venta']) && count($_SESSION['datos_producto_venta'])>0){
+                        foreach($_SESSION['datos_producto_venta'] as $p){
+                            $venta_total_raw += (float)$p['venta_detalle_total'];
+                        }
+                    }
+                    $_SESSION['venta_total'] = round((float)$venta_total_raw, MONEDA_DECIMALES);
+                ?>
+
+                <h4 class="subtitle is-5 has-text-centered has-text-weight-bold mb-5"><small>TOTAL A PAGAR: <span id="venta_total_right"><?php echo MONEDA_SIMBOLO.number_format($_SESSION['venta_total'],MONEDA_DECIMALES,MONEDA_SEPARADOR_DECIMAL,MONEDA_SEPARADOR_MILLAR)." ".MONEDA_NOMBRE; ?></span></small></h4>
+                
+
+                <?php if($_SESSION['datos_cliente_venta']['cliente_id']==1){ ?>
+    <p class="has-text-centered has-text-danger mb-3">
+        ⚠ Para cuenta corriente debe seleccionar un cliente registrado
+    </p>
+<?php } ?>
+
+
+                <?php if($_SESSION['venta_total']>0){ ?>
+                <p class="has-text-centered">
+                    <button type="submit" class="button is-info is-rounded" id="btn_guardar_venta"><i class="far fa-save"></i> &nbsp; Guardar venta</button>
+                </p>
+                <?php } ?>
+                <p class="has-text-centered pt-6">
+                    <small>Los campos marcados con <?php echo CAMPO_OBLIGATORIO; ?> son obligatorios</small>
+                </p>
+                <input type="hidden" value="<?php echo number_format($_SESSION['venta_total'],MONEDA_DECIMALES,'.',''); ?>" id="venta_total_raw_hidden">
+                <input type="hidden" value="<?php echo number_format($_SESSION['venta_total'],MONEDA_DECIMALES,'.',''); ?>" id="venta_total_hidden">
+            </form>
+        </div>
+
+    </div>
+    <?php }else{ ?>
+        <article class="message is-warning">
+             <div class="message-header">
+                <p>¡Ocurrio un error inesperado!</p>
+             </div>
+            <div class="message-body has-text-centered"><i class="fas fa-exclamation-triangle fa-2x"></i><br>No hemos podio seleccionar algunos datos sobre la empresa, por favor <a href="<?php echo APP_URL; ?>companyNew/" >verifique aquí los datos de la empresa</div>
+        </article>
+    <?php } ?>
+</div>
+
+<!-- Modal buscar producto -->
+<div class="modal" id="modal-js-product">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar producto</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="field mt-6 mb-6">
+                <label class="label">Nombre, marca, modelo</label>
+                <div class="control">
+                    <input class="input" type="text" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,30}" name="input_codigo" id="input_codigo" maxlength="30" >
+                </div>
+            </div>
+            <div class="container" id="tabla_productos"></div>
+            <p class="has-text-centered">
+                <button type="button" class="button is-link is-light" onclick="buscar_codigo()" ><i class="fas fa-search"></i> &nbsp; Buscar</button>
+            </p>
+        </section>
+    </div>
+</div>
+
+
+
+
+<!-- Modal buscar cliente -->
+<div class="modal" id="modal-js-client">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title is-uppercase"><i class="fas fa-search"></i> &nbsp; Buscar y agregar cliente</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="field mt-6 mb-6">
+                <label class="label">Documento, Nombre, Apellido, Teléfono</label>
+                <div class="control">
+                    <input class="input" type="text" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ]{1,30}" name="input_cliente" id="input_cliente" maxlength="30" >
+                </div>
+            </div>
+            <div class="container" id="tabla_clientes"></div>
+            <p class="has-text-centered">
+                <button type="button" class="button is-link is-light" onclick="buscar_cliente()" ><i class="fas fa-search"></i> &nbsp; Buscar</button>
+            </p>
+        </section>
+    </div>
+</div>
+
+<style>
+/* Autocomplete dropdown (inline for this view) */
+#sale-autocomplete-list{border-radius:4px;padding:0;margin-top:6px;z-index:9999}
+#sale-autocomplete-list .autocomplete-item{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;cursor:pointer;border-bottom:1px solid #eee;font-size:0.95rem}
+#sale-autocomplete-list .autocomplete-item.is-active{background:#f0f6ff;outline:2px solid rgba(50,115,220,0.12)}
+#sale-autocomplete-list .autocomplete-empty{padding:8px 12px;color:#666}
+#sale-autocomplete-list .meta{color:#6b6b6b;font-size:0.85rem}
+#sale-autocomplete-list mark{background:rgba(255,230,130,0.9);padding:0 2px;border-radius:2px}
+/* visually-hidden for screen readers */
+.is-sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
+@media (max-width:600px){
+    #sale-autocomplete-list .autocomplete-item{font-size:0.9rem;padding:10px}
+}
+/* small loader indicator inside input */
+#sale-product-search-input[data-loading="true"]{background-image:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.25));background-repeat:no-repeat;background-position:right 12px center;background-size:18px 18px}
+
+/* Quantity spinner buttons (custom + / -) */
+.field.has-addons .sale-qty-decr, .field.has-addons .sale-qty-incr{
+    min-width:40px;
+    height:38px;
+    padding:0 10px;
+    font-size:1.05rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.field.has-addons .sale-qty-decr{border-top-right-radius:0;border-bottom-right-radius:0}
+.field.has-addons .sale-qty-incr{border-top-left-radius:0;border-bottom-left-radius:0}
+.sale_input-cant{max-width:80px;height:38px;text-align:center}
+@media (max-width:600px){
+    .field.has-addons .sale-qty-decr, .field.has-addons .sale-qty-incr{min-width:34px;height:34px;font-size:0.95rem}
+    .sale_input-cant{max-width:64px;height:34px}
+}
+
+/* Fallback inline view-level fix: fuerza color visible en inputs de cantidad en móviles */
+@media (max-width: 1024px){
+    .sale-new-page input.sale_input-cant,
+    .sale-new-page .field.has-addons .control input.sale_input-cant{
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+        background-color: transparent !important;
+        -webkit-appearance: textfield !important;
+        appearance: textfield !important;
+        font-size: 1rem !important;
+    }
+}
+</style>
+
+<script>
+
+    /* Quick search: enviar término al modal y ejecutar búsqueda */
+    let sale_product_search_form = document.querySelector("#sale-product-search-form");
+    sale_product_search_form.addEventListener('submit', function(event){
+        event.preventDefault();
+        let q = document.querySelector('#sale-product-search-input').value.trim();
+        if(q==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Ocurrió un error inesperado',
+                text: 'Debes introducir Nombre, Marca o Modelo del producto',
+                confirmButtonText: 'Aceptar'
+            });
+            return;
+        }
+        // pasar valor al modal, abrirlo y buscar
+        document.querySelector('#input_codigo').value = q;
+        document.getElementById('modal-js-product').classList.add('is-active');
+        buscar_codigo();
+    });
+
+    /* Accessible autocomplete (typeahead) - ES6, no librerías */
+    (function(){
+        const input = document.getElementById('sale-product-search-input');
+        const list = document.getElementById('sale-autocomplete-list');
+        const live = document.getElementById('sale-autocomplete-live');
+        let items = [];
+        let activeIndex = -1;
+        let debounceTimer = null;
+
+        const escapeHtml = str => String(str).replace(/[&<>"]+/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]));
+        const escapeRegExp = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        const openList = () => { input.setAttribute('aria-expanded','true'); list.style.display='block'; };
+        const closeList = () => { input.setAttribute('aria-expanded','false'); list.style.display='none'; activeIndex = -1; input.removeAttribute('aria-activedescendant'); };
+
+        const render = (data, query='') => {
+            items = data || [];
+            list.innerHTML = '';
+            if(!items.length){
+                list.innerHTML = '<div class="autocomplete-empty">No hay sugerencias</div>';
+                openList();
+                live.textContent = '0 sugerencias';
+                return;
+            }
+
+            const qEsc = escapeRegExp(query);
+            const re = qEsc ? new RegExp('('+qEsc+')','ig') : null;
+
+            items.forEach((it, idx) => {
+                const id = `sale-option-${idx}`;
+                const labelHtml = re ? escapeHtml(it.label).replace(re, '<mark>$1</mark>') : escapeHtml(it.label);
+                const precioHtml = `<span class="meta">${escapeHtml(it.precio)} ${escapeHtml('<?php echo MONEDA_NOMBRE; ?>')}</span>`;
+
+                const option = document.createElement('div');
+                option.className = 'autocomplete-item';
+                option.id = id;
+                option.setAttribute('role','option');
+                option.setAttribute('aria-selected','false');
+                option.dataset.value = it.value;
+                option.innerHTML = `<div class="name">${labelHtml}</div><div>${precioHtml}</div>`;
+
+                list.appendChild(option);
+            });
+
+            openList();
+            live.textContent = `${items.length} sugerencia${items.length>1? 's' : ''}`;
+            activeIndex = -1;
+        };
+
+        const fetchSuggestions = async (q) => {
+            // intento primario: petición al servidor
+            input.dataset.loading = 'true';
+            const datos = new FormData();
+            datos.append('term', q);
+            datos.append('modulo_venta','autocomplete_producto');
+
+            try{
+                const resp = await fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php', { method: 'POST', body: datos });
+                if(!resp.ok) throw new Error('HTTP '+resp.status);
+                const json = await resp.json();
+                console.debug('autocomplete: resultado servidor', json);
+                input.removeAttribute('data-loading');
+                // validar formato
+                if(!Array.isArray(json)) return [];
+                return json;
+            }catch(err){
+                console.warn('autocomplete: fallo fetch, usando fallback local —', err);
+                input.removeAttribute('data-loading');
+                // fallback local (simulación rápida para garantizar UX)
+                const sample = [
+                    { label: 'Faro Cosechadora (123)', value: '123', precio: '1,200.00', stock: '72' },
+                    { label: 'Bombillo LED 9W (B9)', value: 'B9', precio: '5.00', stock: '120' },
+                    { label: 'Tornillo M6x20 (T6)', value: 'T6', precio: '0.50', stock: '999' }
+                ];
+                const qlow = q.toLowerCase();
+                return sample.filter(s => s.label.toLowerCase().includes(qlow) || s.value.toLowerCase().includes(qlow));
+            }
+        };
+
+        const setActive = (index) => {
+            const options = Array.from(list.querySelectorAll('.autocomplete-item'));
+            if(!options.length) return;
+            // clamp
+            if(index < 0) index = options.length - 1;
+            if(index >= options.length) index = 0;
+
+            options.forEach((el,i)=>{
+                el.classList.toggle('is-active', i===index);
+                el.setAttribute('aria-selected', i===index? 'true' : 'false');
+            });
+
+            const activeEl = options[index];
+            activeIndex = index;
+            if(activeEl){
+                input.setAttribute('aria-activedescendant', activeEl.id);
+                // ensure visible
+                activeEl.scrollIntoView({block:'nearest'});
+            }else{
+                input.removeAttribute('aria-activedescendant');
+            }
+        };
+
+        const chooseActive = (index) => {
+            if(index<0 || index>=items.length) return;
+            const code = items[index].value;
+            // seleccionar producto (llama al AJAX existente)
+            agregar_producto_directo(code);
+            closeList();
+            input.value = '';
+        };
+
+        // input events
+        input.addEventListener('input', (ev) => {
+            const q = ev.target.value.trim();
+            clearTimeout(debounceTimer);
+            if(q.length < 1){ closeList(); return; }
+            debounceTimer = setTimeout(async () => {
+                const suggestions = await fetchSuggestions(q);
+                render(suggestions, q);
+            }, 200);
+        });
+
+        input.addEventListener('keydown', (ev) => {
+            const options = Array.from(list.querySelectorAll('.autocomplete-item'));
+            if(ev.key === 'ArrowDown'){
+                ev.preventDefault();
+                if(list.style.display === 'none') return;
+                setActive((activeIndex + 1) % options.length);
+            }else if(ev.key === 'ArrowUp'){
+                ev.preventDefault();
+                if(list.style.display === 'none') return;
+                setActive((activeIndex - 1 + options.length) % options.length);
+            }else if(ev.key === 'Enter'){
+                if(activeIndex >= 0){
+                    ev.preventDefault();
+                    chooseActive(activeIndex);
+                } // else allow form submit to open modal search
+            }else if(ev.key === 'Escape'){
+                closeList();
+            }
+        });
+
+        // click on suggestion
+        list.addEventListener('click', (ev) => {
+            const item = ev.target.closest('.autocomplete-item');
+            if(!item) return;
+            const idx = Array.from(list.querySelectorAll('.autocomplete-item')).indexOf(item);
+            chooseActive(idx);
+        });
+
+        // close when clicking outside
+        document.addEventListener('click', (ev) => {
+            if(!ev.target.closest('#sale-product-search-input') && !ev.target.closest('#sale-autocomplete-list')){
+                closeList();
+            }
+        });
+
+        // accessibility: close on focus out (keeps click behavior intact)
+        input.addEventListener('blur', () => {
+            // small timeout to allow click to register
+            setTimeout(() => { if(document.activeElement && !document.activeElement.closest('#sale-autocomplete-list')) closeList(); }, 150);
+        });
+
+    })();
+
+
+    /* Agregar producto directamente (desde resultados de búsqueda) */
+    function agregar_producto_directo(codigo){
+        let datos = new FormData();
+        datos.append("producto_codigo", codigo);
+        datos.append("modulo_venta", "agregar_producto");
+
+        fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+            method: 'POST',
+            body: datos
+        })
+        .then(respuesta => respuesta.json())
+        .then(respuesta =>{
+            return alertas_ajax(respuesta);
+        });
+    }
+
+
+    /*----------  Buscar codigo  ----------*/
+    function buscar_codigo(){
+        let input_codigo=document.querySelector('#input_codigo').value;
+
+        input_codigo=input_codigo.trim();
+
+        if(input_codigo!=""){
+
+            let datos = new FormData();
+            datos.append("buscar_codigo", input_codigo);
+            datos.append("modulo_venta", "buscar_codigo");
+
+            fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+                method: 'POST',
+                body: datos
+            })
+            .then(respuesta => respuesta.text())
+            .then(respuesta =>{
+                let tabla_productos=document.querySelector('#tabla_productos');
+                tabla_productos.innerHTML=respuesta;
+            });
+
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Ocurrió un error inesperado',
+                text: 'Debes de introducir el Nombre, Marca o Modelo del producto',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    }
+
+
+    /*----------  Agregar codigo  ----------*/
+    function agregar_codigo(codigo){
+        // añadir producto directamente desde los resultados (sin usar código de barras en la UI)
+        agregar_producto_directo(codigo);
+    }
+
+
+    /* Actualizar cantidad de producto */
+    function actualizar_cantidad(id,codigo){
+        let cantidad=document.querySelector(id).value;
+
+        cantidad=cantidad.trim();
+        codigo.trim();
+
+        if(cantidad>0){
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Desea actualizar la cantidad de productos",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, actualizar',
+                cancelButtonText: 'No, cancelar'
+            }).then((result) => {
+                if (result.isConfirmed){
+
+                    let datos = new FormData();
+                    datos.append("producto_codigo", codigo);
+                    datos.append("producto_cantidad", cantidad);
+                    datos.append("modulo_venta", "actualizar_producto");
+
+                    fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+                        method: 'POST',
+                        body: datos
+                    })
+                    .then(respuesta => respuesta.json())
+                    .then(respuesta =>{
+                        return alertas_ajax(respuesta);
+                    });
+                }
+            });
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Ocurrió un error inesperado',
+                text: 'Debes de introducir una cantidad mayor a 0',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    }
+
+
+    /*----------  Buscar cliente  ----------*/
+    function buscar_cliente(){
+        let input_cliente=document.querySelector('#input_cliente').value;
+
+        input_cliente=input_cliente.trim();
+
+        if(input_cliente!=""){
+
+            let datos = new FormData();
+            datos.append("buscar_cliente", input_cliente);
+            datos.append("modulo_venta", "buscar_cliente");
+
+            fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+                method: 'POST',
+                body: datos
+            })
+            .then(respuesta => respuesta.text())
+            .then(respuesta =>{
+                let tabla_clientes=document.querySelector('#tabla_clientes');
+                tabla_clientes.innerHTML=respuesta;
+            });
+
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Ocurrió un error inesperado',
+                text: 'Debes de introducir el Numero de documento, Nombre, Apellido o Teléfono del cliente',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    }
+
+
+    /*----------  Agregar cliente  ----------*/
+    function agregar_cliente(id){
+
+        Swal.fire({
+            title: '¿Quieres agregar este cliente?',
+            text: "Se va a agregar este cliente para realizar una venta",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, agregar',
+            cancelButtonText: 'No, cancelar'
+        }).then((result) => {
+            if (result.isConfirmed){
+
+                let datos = new FormData();
+                datos.append("cliente_id", id);
+                datos.append("modulo_venta", "agregar_cliente");
+
+                fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+                    method: 'POST',
+                    body: datos
+                })
+                .then(respuesta => respuesta.json())
+                .then(respuesta =>{
+                    return alertas_ajax(respuesta);
+                });
+
+            }
+        });
+    }
+
+
+    /*----------  Remover cliente  ----------*/
+    function remover_cliente(id){
+
+        Swal.fire({
+            title: '¿Quieres remover este cliente?',
+            text: "Se va a quitar el cliente seleccionado de la venta",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, remover',
+            cancelButtonText: 'No, cancelar'
+        }).then((result) => {
+            if (result.isConfirmed){
+
+                let datos = new FormData();
+                datos.append("cliente_id", id);
+                datos.append("modulo_venta", "remover_cliente");
+
+                fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php',{
+                    method: 'POST',
+                    body: datos
+                })
+                .then(respuesta => respuesta.json())
+                .then(respuesta =>{
+                    return alertas_ajax(respuesta);
+                });
+
+            }
+        });
+    }
+
+    /*----------  Calcular cambio y aplicar descuento  ----------*/
+    function applyDiscountAndUpdateDisplays(rawTotal){
+        const tipo = document.querySelector('#venta_desc_tipo').value || 'NINGUNO';
+        const valor = parseFloat(document.querySelector('#venta_desc_valor').value) || 0;
+
+        let final = parseFloat(rawTotal) || 0;
+        if(tipo === 'FIJO'){
+            final = Math.max(0, final - valor);
+        }else if(tipo === 'PORC'){
+            final = Math.max(0, final - (final * (valor/100)));
+        }
+
+        // update displays
+        const formatted = '<?php echo MONEDA_SIMBOLO; ?>' + Number(final).toLocaleString(undefined, {minimumFractionDigits: <?php echo MONEDA_DECIMALES; ?>, maximumFractionDigits: <?php echo MONEDA_DECIMALES; ?>}) + ' ' + '<?php echo MONEDA_NOMBRE; ?>';
+        const totalDisplay = document.getElementById('venta_total_display'); if(totalDisplay) totalDisplay.textContent = formatted;
+        const totalRight = document.getElementById('venta_total_right'); if(totalRight) totalRight.textContent = formatted;
+        const totalHidden = document.getElementById('venta_total_hidden'); if(totalHidden) totalHidden.value = Number(final).toFixed(<?php echo MONEDA_DECIMALES; ?>);
+    }
+
+    function calcular_totales(){
+        let abono = parseFloat(document.querySelector('#venta_abono').value) || 0;
+        let raw = parseFloat(document.querySelector('#venta_total_raw_hidden').value) || 0;
+        // compute final after discount
+        const tipo = document.querySelector('#venta_desc_tipo').value || 'NINGUNO';
+        const valor = parseFloat(document.querySelector('#venta_desc_valor').value) || 0;
+
+        let total = raw;
+        if(tipo === 'FIJO') total = Math.max(0, raw - valor);
+        if(tipo === 'PORC') total = Math.max(0, raw - (raw * (valor/100)));
+
+        let forma = document.querySelector('#forma_pago').value;
+
+        let cambio = 0;
+        let deuda = 0;
+
+        if(forma=="CONTADO"){
+            if(abono >= total){
+                cambio = abono - total;
+            }else{
+                deuda = total - abono;
+            }
+        }else{
+            if(abono > 0){
+                deuda = total - abono;
+            }else{
+                deuda = total;
+            }
+        }
+
+        document.querySelector('#venta_cambio').value = cambio.toFixed(2);
+        document.querySelector('#venta_deuda').value = deuda.toFixed(2);
+        // also update displays based on discount
+        applyDiscountAndUpdateDisplays(raw);
+    }
+
+    document.querySelector("#venta_abono").addEventListener('keyup', calcular_totales);
+    document.querySelector("#forma_pago").addEventListener('change', calcular_totales);
+    document.querySelector("#venta_desc_tipo").addEventListener('change', calcular_totales);
+    document.querySelector("#venta_desc_valor").addEventListener('keyup', calcular_totales);
+
+
+/*código agregado por Emi para bloquear boton de guardar venta*/
+document.querySelector("#forma_pago").addEventListener('change', function(){
+    let forma=this.value;
+    let cliente=<?php echo $_SESSION['datos_cliente_venta']['cliente_id']; ?>;
+
+    if(forma=="CUENTA_CORRIENTE" && cliente==1){
+        Swal.fire({
+            icon: 'warning',
+            title: 'Cliente inválido',
+            text: 'Debe seleccionar un cliente para usar cuenta corriente'
+        });
+        document.querySelector('#btn_guardar_venta').disabled=true;
+    }else{
+        document.querySelector('#btn_guardar_venta').disabled=false;
+    }
+});
+
+
+/* ---------- Auto-update subtotal & total when quantity changes (no "Actualizar" click) ---------- */
+(function(){
+    const inputs = document.querySelectorAll('.sale_input-cant');
+    const timers = new WeakMap();
+
+    if(!inputs) return;
+
+    inputs.forEach(input => {
+        // store previous value to allow revert on error
+        input.dataset.prev = input.value;
+
+        const sendUpdate = () => {
+            const nuevo = input.value.trim();
+            // validate
+            if(nuevo === '' || isNaN(nuevo) || Number(nuevo) <= 0){
+                Swal.fire({ icon: 'error', title: 'Ocurrió un error inesperado', text: 'Debes introducir una cantidad mayor a 0', confirmButtonText: 'Aceptar' });
+                input.value = input.dataset.prev;
+                return;
+            }
+
+            if(nuevo === input.dataset.prev) return; // nothing to do
+
+            // prepare request
+            const codigo = input.dataset.codigo;
+            const datos = new FormData();
+            datos.append('producto_codigo', codigo);
+            datos.append('producto_cantidad', nuevo);
+            datos.append('modulo_venta', 'actualizar_producto');
+            datos.append('inline_update', '1'); // request inline totals from server
+
+            input.disabled = true;
+            input.classList.add('is-loading');
+
+            fetch('<?php echo APP_URL; ?>app/ajax/ventaAjax.php', { method: 'POST', body: datos })
+            .then(r => r.json())
+            .then(resp => {
+                // successful inline response (new format)
+                if(resp && resp.tipo === 'inline'){
+                    // update line subtotal
+                    const subtotalEl = document.querySelector('.sale_subtotal[data-codigo="'+resp.producto_codigo+'"]');
+                    if(subtotalEl) subtotalEl.textContent = resp.venta_detalle_total_formatted;
+
+                    // update raw total hidden (server returns raw sum of line items)
+                    const totalRawHidden = document.getElementById('venta_total_raw_hidden');
+                    if(totalRawHidden) totalRawHidden.value = resp.venta_total;
+
+                    // apply discount client-side and update displays
+                    applyDiscountAndUpdateDisplays(resp.venta_total);
+
+                    // update previous value and recalculate change/debt
+                    input.dataset.prev = nuevo;
+                    calcular_totales();
+                }else if(resp && resp.tipo === 'simple' && resp.texto && resp.texto.toLowerCase().includes('no has modificado')){
+                    // benign: quantity not changed on server — keep the new value as previous
+                    input.dataset.prev = input.value;
+                }else{
+                    // fallback to global handler (shows alerts / redirects)
+                    alertas_ajax(resp);
+                    // revert input on error
+                    input.value = input.dataset.prev;
+                }
+            })
+            .catch(err => {
+                console.error('update quantity failed', err);
+                Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo actualizar la cantidad. Intente nuevamente.' });
+                input.value = input.dataset.prev;
+            })
+            .finally(() => {
+                input.disabled = false;
+                input.classList.remove('is-loading');
+            });
+        };
+
+        // attach +/- buttons (if present)
+        const td = input.closest('td');
+        const btnInc = td ? td.querySelector('.sale-qty-incr') : null;
+        const btnDec = td ? td.querySelector('.sale-qty-decr') : null;
+
+        if(btnInc){
+            btnInc.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                let val = parseInt(input.value) || 0;
+                input.value = val + 1;
+                // immediate update for button clicks
+                sendUpdate();
+                input.focus();
+            });
+        }
+        if(btnDec){
+            btnDec.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                let val = parseInt(input.value) || 0;
+                if(val <= 1) return;
+                input.value = val - 1;
+                sendUpdate();
+                input.focus();
+            });
+        }
+
+        // debounce on input
+        input.addEventListener('input', (e) => {
+            clearTimeout(timers.get(input));
+            timers.set(input, setTimeout(sendUpdate, 350));
+        });
+
+        // also update on blur to ensure change is sent
+        input.addEventListener('blur', sendUpdate);
+    });
+})();
+
+    /* ---------- Transcripción por voz (básica, móvil-friendly) ---------- */
+    (function(){
+        const btn = document.getElementById('btn_voice_input');
+        const box = document.getElementById('voice_transcript_box');
+        const resultEl = document.getElementById('voice_result');
+        const fechaInput = document.getElementById('venta_fecha_detected');
+        const fechaHidden = document.getElementById('venta_fecha_hidden');
+        const ventaNumHidden = document.getElementById('venta_numero_hidden');
+        const ventaUsuarioHidden = document.getElementById('venta_usuario_hidden');
+        const ventaBarrioHidden = document.getElementById('venta_barrio_hidden');
+
+        if(!btn) return;
+
+        const Speech = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+        if(!Speech){
+            btn.addEventListener('click', ()=>{ Swal.fire({ icon:'error', title:'Transcripción no soportada', text:'Tu navegador no soporta la Web Speech API. Usa Chrome en Android o un navegador compatible.' }); });
+            return;
+        }
+
+        const recog = new Speech();
+        recog.lang = 'es-AR';
+        recog.interimResults = false;
+        recog.maxAlternatives = 1;
+
+        btn.addEventListener('click', function(){
+            try{
+                resultEl.textContent = 'Escuchando... (habla ahora)';
+                box.style.display = 'block';
+                recog.start();
+                btn.classList.add('is-active');
+            }catch(e){
+                console.warn('recog start err', e);
+            }
+        });
+
+        recog.addEventListener('result', function(ev){
+            const transcript = Array.from(ev.results).map(r=>r[0].transcript).join(' ').trim();
+            resultEl.textContent = transcript;
+            // parse básico
+            // fecha dd/mm/yyyy or dd-mm-yyyy
+            const fechaMatch = transcript.match(/(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})/);
+            if(fechaMatch){
+                const f = fechaMatch[1].replace(/-/g,'/');
+                // try to normalize to yyyy-mm-dd
+                const parts = f.split('/');
+                if(parts.length===3){
+                    let dd = parts[0].padStart(2,'0');
+                    let mm = parts[1].padStart(2,'0');
+                    let yy = parts[2];
+                    if(yy.length===2) yy = '20'+yy;
+                    const iso = yy+'-'+mm+'-'+dd;
+                    if(fechaInput) fechaInput.value = iso; if(fechaHidden) fechaHidden.value = iso;
+                }
+            }
+
+            // número de venta: "venta 123" or "ticket 123"
+            const ventaMatch = transcript.match(/(?:venta|ticket|nro|numero|número)\s*(?:nro|numero|número|#|:)?\s*(\d{1,10})/i);
+            if(ventaMatch){ if(ventaNumHidden) ventaNumHidden.value = ventaMatch[1]; }
+
+            // usuario / cajero: "usuario Juan Perez" or "cajero: pedro"
+            const usuarioMatch = transcript.match(/(?:usuario|cajero)\s*(?:es|:)?\s*([A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,40})/i);
+            if(usuarioMatch){ if(ventaUsuarioHidden) ventaUsuarioHidden.value = usuarioMatch[1].trim(); }
+
+            // barrio / zona: "barrio San Martin" or "zona norte"
+            const barrioMatch = transcript.match(/(?:barrio|zona)\s*(?:de|:)?\s*([A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]{2,40})/i);
+            if(barrioMatch){ if(ventaBarrioHidden) ventaBarrioHidden.value = barrioMatch[1].trim(); }
+
+        });
+
+        recog.addEventListener('speechend', function(){ recog.stop(); btn.classList.remove('is-active'); });
+        recog.addEventListener('error', function(ev){ resultEl.textContent = 'Error: '+ev.error; btn.classList.remove('is-active'); });
+        recog.addEventListener('end', function(){ btn.classList.remove('is-active'); });
+
+    })();
+
+</script>
+
+<?php
+    include "./app/views/inc/print_invoice_script.php";
+?>
